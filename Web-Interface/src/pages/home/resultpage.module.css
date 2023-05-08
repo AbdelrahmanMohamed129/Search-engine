@@ -1,0 +1,53 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.head{
+    margin-inline: 3rem;
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding-bottom: 3rem;
+    
+}
+
+.border{
+    border-bottom: solid 1px rgb(200, 197, 197);
+
+}
+
+.head h1{
+    font-size: 3rem;
+}
+
+.search{
+    width: 25vw;
+    position: relative;
+}
+
+
+.searchBar{
+    width: 100%;
+    border: solid 2px grey;
+    height: 3rem;
+    border-radius: 3rem;
+    padding: 1rem;
+    font-size: 2rem;
+    text-indent: 5rem;
+}
+
+.searchBar:hover{
+    background-color: rgb(239, 238, 238);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.fa{
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    color: grey;
+    font-size: 1.5rem;
+}
