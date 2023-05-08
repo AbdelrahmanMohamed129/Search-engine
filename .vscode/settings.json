@@ -1,0 +1,11 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "libraries/mongo-java-driver-3.12.13.jar",
+        "libraries/mongo-java-driver-3.12.13-javadoc.jar",
+        "libraries/mongo-java-driver-3.12.13-sources.jar",
+        "libraries/jsoup-1.16.1.jar",
+        "libraries/jsoup-1.16.1-javadoc.jar",
+        "libraries/jsoup-1.16.1-sources.jar"
+    ]
+}
