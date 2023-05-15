@@ -1,0 +1,2590 @@
+Tag: span
+Text: Tag: body
+Text: Tag: body
+Text: Tag: body
+Text: Tag: body
+Text: Tag: body
+Text: Tag: body
+Text: Tag: body
+Text: Tag: body
+Text: Tag: body
+Text: Tag: body
+Text: Tag: div
+Text: Tag: div
+Text: Tag: span
+Text: Tag: span
+Text: Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: a
+Text: EnterTag: div
+Text: |Tag: a
+Text: RegisterTag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: ul
+Text: Tag: a
+Text: HomeTag: ul
+Text: Tag: a
+Text: TopTag: ul
+Text: Tag: a
+Text: CatalogTag: ul
+Text: Tag: a
+Text: ContestsTag: ul
+Text: Tag: a
+Text: GymTag: ul
+Text: Tag: a
+Text: ProblemsetTag: ul
+Text: Tag: a
+Text: GroupsTag: ul
+Text: Tag: a
+Text: RatingTag: ul
+Text: Tag: span
+Text: EduTag: ul
+Text: Tag: a
+Text: APITag: ul
+Text: Tag: a
+Text: CalendarTag: ul
+Text: Tag: a
+Text: HelpTag: ul
+Text: Tag: div
+Text: Tag: form
+Text: Tag: form
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: ? Pay attentionTag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: span
+Text: Before contestTag: a
+Text: Codeforces Round (Div. 3)Tag: span
+Text: 4 daysTag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: ? Top ratedTag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: table
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: th
+Text: #Tag: tr
+Text: Tag: th
+Text: UserTag: tr
+Text: Tag: th
+Text: RatingTag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: 1Tag: tr
+Text: Tag: span
+Text: BTag: a
+Text: enqTag: tr
+Text: Tag: td
+Text: 3783Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: 2Tag: tr
+Text: Tag: span
+Text: jTag: a
+Text: ianglyTag: tr
+Text: Tag: td
+Text: 3741Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: 3Tag: tr
+Text: Tag: span
+Text: tTag: a
+Text: ouristTag: tr
+Text: Tag: td
+Text: 3622Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: 4Tag: tr
+Text: Tag: span
+Text: UTag: a
+Text: m_nikTag: tr
+Text: Tag: td
+Text: 3536Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: 5Tag: tr
+Text: Tag: span
+Text: mTag: a
+Text: aroonrkTag: tr
+Text: Tag: td
+Text: 3526Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: 6Tag: tr
+Text: Tag: span
+Text: iTag: a
+Text: naFSTreamTag: tr
+Text: Tag: td
+Text: 3477Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: 7Tag: tr
+Text: Tag: span
+Text: fTag: a
+Text: antasyTag: tr
+Text: Tag: td
+Text: 3468Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: 8Tag: tr
+Text: Tag: span
+Text: eTag: a
+Text: cnerwalaTag: tr
+Text: Tag: td
+Text: 3454Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: 9Tag: tr
+Text: Tag: span
+Text: QTag: a
+Text: AQAutoMatonTag: tr
+Text: Tag: td
+Text: 3428Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: 10Tag: tr
+Text: Tag: span
+Text: fTag: a
+Text: ivedemandsTag: tr
+Text: Tag: td
+Text: 3381Tag: tr
+Text: Tag: tbody
+Text: Tag: table
+Text: Tag: div
+Text: Tag: div
+Text: Tag: table
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: Tag: a
+Text: CountriesTag: td
+Text: |Tag: a
+Text: CitiesTag: td
+Text: |Tag: a
+Text: OrganizationsTag: td
+Text: Tag: tr
+Text: Tag: td
+Text: Tag: a
+Text: View all ?Tag: td
+Text: Tag: tr
+Text: Tag: tbody
+Text: Tag: table
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: ? Top contributorsTag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: table
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: th
+Text: #Tag: tr
+Text: Tag: th
+Text: UserTag: tr
+Text: Tag: th
+Text: Contrib.Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: 1Tag: tr
+Text: Tag: span
+Text: UTag: a
+Text: m_nikTag: tr
+Text: Tag: td
+Text: 186Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: 2Tag: tr
+Text: Tag: a
+Text: awooTag: tr
+Text: Tag: td
+Text: 179Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: 3Tag: tr
+Text: Tag: a
+Text: adamantTag: tr
+Text: Tag: td
+Text: 176Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: 4Tag: tr
+Text: Tag: a
+Text: norTag: tr
+Text: Tag: td
+Text: 171Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: 5Tag: tr
+Text: Tag: a
+Text: -is-this-fft-Tag: tr
+Text: Tag: td
+Text: 164Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: 5Tag: tr
+Text: Tag: span
+Text: mTag: a
+Text: aroonrkTag: tr
+Text: Tag: td
+Text: 164Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: 7Tag: tr
+Text: Tag: a
+Text: antontrygubO_oTag: tr
+Text: Tag: td
+Text: 157Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: 8Tag: tr
+Text: Tag: span
+Text: kTag: a
+Text: o_osagaTag: tr
+Text: Tag: td
+Text: 150Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: 9Tag: tr
+Text: Tag: a
+Text: dario2994Tag: tr
+Text: Tag: td
+Text: 149Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: 9Tag: tr
+Text: Tag: a
+Text: SecondThreadTag: tr
+Text: Tag: td
+Text: 149Tag: tr
+Text: Tag: tbody
+Text: Tag: table
+Text: Tag: div
+Text: Tag: div
+Text: Tag: table
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: Tag: tr
+Text: Tag: td
+Text: Tag: a
+Text: View all ?Tag: td
+Text: Tag: tr
+Text: Tag: tbody
+Text: Tag: table
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: ? Find userTag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: form
+Text: Tag: div
+Text: Tag: label
+Text: Handle:Tag: label
+Text: Tag: div
+Text: Tag: form
+Text: Tag: div
+Text: Tag: div
+Text: Tag: form
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: ? Recent actionsTag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: a
+Text: thenymphsofdelphiTag: div
+Text: ?Tag: a
+Text: Codeforces Round #873 (Div. 1 & 2) EditorialTag: div
+Text: Tag: div
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: a
+Text: MoinatorTag: div
+Text: ?Tag: a
+Text: Compile Times Slower on WindowsTag: div
+Text: Tag: div
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: span
+Text: mTag: a
+Text: aroonrkTag: div
+Text: ?Tag: a
+Text: AtCoder Regular Contest 160 AnnouncementTag: div
+Text: Tag: div
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: a
+Text: jeroenodbTag: div
+Text: ?Tag: a
+Text: Codeforces Round #869 (Div.1, Div.2) EditorialTag: div
+Text: Tag: div
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: a
+Text: Mike4235Tag: div
+Text: ?Tag: a
+Text: Codeforces Round #873 (Div. 1 & 2)Tag: div
+Text: Tag: div
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: a
+Text: Heap_OverFlowTag: div
+Text: ?Tag: a
+Text: Democratic changes in TurkeyTag: div
+Text: Tag: div
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: a
+Text: awooTag: div
+Text: ?Tag: a
+Text: Educational Codeforces Round 148 EditorialTag: div
+Text: Tag: div
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: a
+Text: omkar21_proTag: div
+Text: ?Tag: a
+Text: Got WA because of ans*= j ,but ac with ans = ans*jTag: div
+Text: Tag: div
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: a
+Text: pickle_juice2023Tag: div
+Text: ?Tag: a
+Text: Request helpTag: div
+Text: Tag: div
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: a
+Text: Aveiro_quanyueTag: div
+Text: ?Tag: a
+Text: Nowcoder problem: A Game on the TreeTag: div
+Text: Tag: div
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: a
+Text: BERNARB.01Tag: div
+Text: ?Tag: a
+Text: [Problems Discussion] APIO 2023Tag: div
+Text: Tag: div
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: a
+Text: SuperJ6Tag: div
+Text: ?Tag: a
+Text: How to Effectively Practice CP + Problem Solving GuideTag: div
+Text: Tag: div
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: span
+Text: UTag: a
+Text: m_nikTag: div
+Text: ?Tag: a
+Text: Hooray! Binary Search Episode!Tag: div
+Text: Tag: div
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: a
+Text: Alexdat2000Tag: div
+Text: ?Tag: a
+Text: Codeforces Round #862 (Div. 2)Tag: div
+Text: Tag: div
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: a
+Text: awooTag: div
+Text: ?Tag: a
+Text: Educational Codeforces Round 148 [Rated for Div. 2]Tag: div
+Text: Tag: div
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: a
+Text: drugkeeperTag: div
+Text: ?Tag: a
+Text: Problem: Counting the number of elements in an array from l to r with a value from v1 to v2Tag: div
+Text: Tag: div
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: a
+Text: mphillotryTag: div
+Text: ?Tag: a
+Text: CodeSprint LA 2023 — Registration Deadline Extended!Tag: div
+Text: Tag: div
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: a
+Text: VladosiyaTag: div
+Text: ?Tag: a
+Text: Codeforces Round 863 (Div. 3) EditorialTag: div
+Text: Tag: div
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: a
+Text: urparvezaliTag: div
+Text: ?Tag: a
+Text: Determining minimum and maximumTag: div
+Text: Tag: div
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: a
+Text: sibunaTag: div
+Text: ?Tag: a
+Text: ASAPTag: div
+Text: Tag: div
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: a
+Text: Gr0verTag: div
+Text: ?Tag: a
+Text: How to improveTag: div
+Text: Tag: div
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: a
+Text: PrabhxsTag: div
+Text: ?Tag: a
+Text: No Growth — Any Suggestions/AdviceTag: div
+Text: Tag: div
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: a
+Text: DottedCalculatorTag: div
+Text: ?Tag: a
+Text: Writing problemsTag: div
+Text: Tag: div
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: a
+Text: SirRembocodinaTag: div
+Text: ?Tag: a
+Text: Codeforces Round 873 (Div. 2) B–E / (Div. 1) A–C – Video EditorialTag: div
+Text: Tag: div
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: a
+Text: mandhan_63Tag: div
+Text: ?Tag: a
+Text: <h1>Happy Mother's Day</h1>Tag: div
+Text: Tag: div
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: table
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: Tag: tr
+Text: Tag: td
+Text: Tag: a
+Text: Detailed ?Tag: td
+Text: Tag: tr
+Text: Tag: tbody
+Text: Tag: table
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: a
+Text: Tag: p
+Text: Codeforces Round #873 (Div. 1 & 2)Tag: a
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: ByTag: a
+Text: Mike4235Tag: div
+Text: ,Tag: span
+Text: 9 days agoTag: div
+Text: ,Tag: div
+Text: Tag: span
+Text: Tag: div
+Text: Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: p
+Text: Hello, Codeforces!Tag: a
+Text: thenymphsofdelphiTag: p
+Text: ,Tag: a
+Text: lanhfTag: p
+Text: , and I are delighted to invite you to take part inTag: a
+Text: Codeforces Round 873 (Div. 1)Tag: p
+Text: andTag: a
+Text: Codeforces Round 873 (Div. 2)Tag: p
+Text: which are going to take place atTag: span
+Text: May/14/2023 17:35 (Moscow time)Tag: p
+Text: . Participants with a rating lower than 1900 will participate in Division $$$2$$$, while participants with a rating of at least 1900 will participate in Division $$$1$$$.Tag: p
+Text: In both divisions, you will be givenTag: strong
+Text: 2 hoursTag: p
+Text: to solveTag: strong
+Text: 6 problemsTag: p
+Text: (one of which is divided into two subtasks), all of which were authored and prepared by me,Tag: a
+Text: lanhfTag: p
+Text: , andTag: a
+Text: thenymphsofdelphiTag: p
+Text: . We would like to thank the following people who made our round possible:Tag: div
+Text: Tag: ul
+Text: Tag: a
+Text: 74TrAkToRTag: li
+Text: for his great coordination and help with the problems' preparation during the last 4 months.Tag: ul
+Text: Tag: a
+Text: khuepr123Tag: li
+Text: for doing nothing but being the mascot.Tag: ul
+Text: Tag: a
+Text: A05Tag: li
+Text: ,Tag: a
+Text: KawaiiTag: li
+Text: ,Tag: a
+Text: SeehEternityTag: li
+Text: ,Tag: a
+Text: yanglakeTag: li
+Text: ,Tag: a
+Text: minhnhatnoeTag: li
+Text: ,Tag: a
+Text: bachbeo2007Tag: li
+Text: ,Tag: a
+Text: TranGiaHuyTag: li
+Text: ,Tag: a
+Text: SanguineChameleonTag: li
+Text: ,Tag: a
+Text: HollwoQ_PelwTag: li
+Text: ,Tag: a
+Text: socpiteTag: li
+Text: ,Tag: a
+Text: uyluluTag: li
+Text: ,Tag: a
+Text: hotboy2703Tag: li
+Text: ,Tag: a
+Text: generic_placeholder_nameTag: li
+Text: ,Tag: a
+Text: Theoth_NormieTag: li
+Text: ,Tag: a
+Text: KuroniTag: li
+Text: ,Tag: a
+Text: CDuonggTag: li
+Text: ,Tag: span
+Text: gTag: a
+Text: amegameTag: li
+Text: ,Tag: a
+Text: AquaMoonTag: li
+Text: ,Tag: a
+Text: HuahTag: li
+Text: ,Tag: span
+Text: fTag: a
+Text: lowerletterTag: li
+Text: ,Tag: span
+Text: uTag: a
+Text: gly2333Tag: li
+Text: ,Tag: a
+Text: LavineTag: li
+Text: ,Tag: a
+Text: Gary2005Tag: li
+Text: ,Tag: a
+Text: Tuanlinh123Tag: li
+Text: ,Tag: a
+Text: hiennoobTag: li
+Text: ,Tag: a
+Text: RDDCCDTag: li
+Text: ,Tag: a
+Text: shiv_codegenTag: li
+Text: ,Tag: a
+Text: uuzlovetreeTag: li
+Text: ,Tag: a
+Text: E_huanTag: li
+Text: ,Tag: a
+Text: nixnehcTag: li
+Text: ,Tag: a
+Text: waaitgTag: li
+Text: ,Tag: a
+Text: QuangBuiCPTag: li
+Text: ,Tag: a
+Text: errorgornTag: li
+Text: ,Tag: a
+Text: rsjTag: li
+Text: for testing our round and giving valuable feedback which helped us improve the problemset.Tag: ul
+Text: Tag: a
+Text: MikeMirzayanovTag: li
+Text: for the great Codeforces and Polygon platforms.Tag: ul
+Text: Tag: p
+Text: Last but not least,Tag: strong
+Text: youTag: p
+Text: for participating in our round.Tag: ul
+Text: Tag: p
+Text: Scoring distribution:Tag: strong
+Text: Div. 1Tag: p
+Text: : 500 — (750+750) — 1500 — 1750 — 2500 — 3500Tag: strong
+Text: Div. 2Tag: p
+Text: : 500 — 1000 — 1250 — (1250+1250) — 2500 — 2750Tag: p
+Text: We hope all of you will enjoy our problemset. Good luck and may the ratings be with you!Tag: strong
+Text: UPDTag: p
+Text: : Congratulations to the winners!!Tag: table
+Text: Tag: tr
+Text: Tag: th
+Text: RankTag: tr
+Text: Tag: th
+Text: Div. 1Tag: tr
+Text: Tag: th
+Text: Div. 2Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: 1Tag: tr
+Text: Tag: span
+Text: kTag: a
+Text: sun48Tag: tr
+Text: Tag: a
+Text: exxqfuTag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: 2Tag: tr
+Text: Tag: span
+Text: jTag: a
+Text: ianglyTag: tr
+Text: Tag: a
+Text: KanaArimaTag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: 3Tag: tr
+Text: Tag: span
+Text: gTag: a
+Text: yh20Tag: tr
+Text: Tag: a
+Text: BERNARB.01Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: 4Tag: tr
+Text: Tag: span
+Text: mTag: a
+Text: aroonrkTag: tr
+Text: Tag: a
+Text: until3amTag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: 5Tag: tr
+Text: Tag: span
+Text: UTag: a
+Text: m_nikTag: tr
+Text: Tag: a
+Text: FCAI-CUTag: tr
+Text: Tag: tbody
+Text: Tag: p
+Text: Also congratulations toTag: span
+Text: kTag: a
+Text: sun48Tag: p
+Text: andTag: span
+Text: GTag: a
+Text: olovanov399Tag: p
+Text: on (re)gaining the Legendary Grandmaster title!Tag: strong
+Text: UPDTag: p
+Text: :Tag: a
+Text: EditorialTag: div
+Text: Tag: p
+Text: Tag: a
+Text: Full text and comments »Tag: p
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: span
+Text: Announcement ofTag: a
+Text: Codeforces Round 873 (Div. 1)Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: span
+Text: Announcement ofTag: a
+Text: Codeforces Round 873 (Div. 2)Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: span
+Text: +378Tag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: div
+Text: Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: a
+Text: Mike4235Tag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: span
+Text: 9 days agoTag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: a
+Text: 222Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: a
+Text: Tag: p
+Text: Educational Codeforces Round 148 [Rated for Div. 2]Tag: a
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: ByTag: a
+Text: awooTag: div
+Text: ,Tag: a
+Text: historyTag: div
+Text: ,Tag: span
+Text: 4 days agoTag: div
+Text: , translation,Tag: div
+Text: Tag: span
+Text: Tag: div
+Text: Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: p
+Text: Hello Codeforces!Tag: p
+Text: OnTag: span
+Text: May/12/2023 17:35 (Moscow time)Tag: p
+Text: Tag: a
+Text: Educational Codeforces Round 148 (Rated for Div. 2)Tag: p
+Text: will start.Tag: p
+Text: Series of Educational Rounds continue being held asTag: a
+Text: Harbour.Space UniversityTag: p
+Text: initiative! You can read the details about the cooperation betweenTag: a
+Text: Harbour.Space UniversityTag: p
+Text: and Codeforces in theTag: a
+Text: blog postTag: p
+Text: .Tag: p
+Text: This round will beTag: strong
+Text: rated for the participants with rating lower than 2100Tag: p
+Text: . It will be held on extended ICPC rules. The penalty for each incorrect submission until the submission with a full solution is 10 minutes. After the end of the contest, you will have 12 hours to hack any solution you want. You will have access to copy any solution and test it locally.Tag: p
+Text: You will be givenTag: strong
+Text: 6 or 7 problemsTag: p
+Text: andTag: strong
+Text: 2 hoursTag: p
+Text: to solve them.Tag: p
+Text: The problems were invented and prepared by AdilbekTag: a
+Text: adedalicTag: p
+Text: Dalabaev, IvanTag: a
+Text: BledDestTag: p
+Text: Androsov, MaksimTag: a
+Text: NeonTag: p
+Text: Mescheryakov and me. Also, huge thanks to MikeTag: a
+Text: MikeMirzayanovTag: p
+Text: Mirzayanov for great systems Polygon and Codeforces.Tag: p
+Text: Good luck to all the participants!Tag: p
+Text: Our friends at Harbour.Space also have a message for you:Tag: strong
+Text: Your Path to Success Starts at Harbour.Space BangkokTag: em
+Text: Hello Codeforces!Tag: em
+Text: We are excited to announce that we are offering 10 full scholarships to study Computer Science or Data Science at Harbour.Space, Bangkok Campus!Tag: em
+Text: We invite you to apply to our university in Bangkok, Thailand, where we offer a full scholarship for qualified participants.Tag: p
+Text: Tag: em
+Text: Our university has a vibrant and inclusive community, where you'll have the opportunity to learn from and collaborate with some of the brightest minds in your field, such as the one and only MikeTag: a
+Text: MikeMirzayanovTag: em
+Text: Mirzayanov. Additionally, our state-of-the-art University is designed to support your academic success and personal growth.Tag: em
+Text: If you want to pursue higher education, get accreditation and expand your horizons, we encourage you to apply! As members of the Codeforces community, we recognise your talent and dedication to problem-solving, and you would make an excellent candidate for our programme.Tag: u
+Text: Requirements:Tag: strong
+Text: Study Commitment:Tag: em
+Text: 3 hours/day. You will complete 15 modules (each three weeks long) in one year. The daily class workload is 3 hours, plus homework to complete in your own time.Tag: strong
+Text: University requirementsTag: div
+Text: Tag: ul
+Text: Tag: em
+Text: CVTag: ul
+Text: Tag: em
+Text: High School/Bachelor's DegreeTag: ul
+Text: Tag: em
+Text: English proficiencyTag: ul
+Text: Tag: em
+Text: Medalist in any Programming competition is a plus!Tag: ul
+Text: Tag: em
+Text: Make sure to apply beforeTag: strong
+Text: June the 30th, 2023Tag: em
+Text: , to be eligible for the scholarship and reduced application fee!Tag: div
+Text: Tag: center
+Text: Tag: a
+Text: Apply here ?Tag: center
+Text: Tag: em
+Text: We look forward to hearing from you and welcoming you to our community.Tag: em
+Text: All the best,Tag: p
+Text: Tag: em
+Text: The Harbour.Space TeamTag: strong
+Text: UPD:Tag: p
+Text: Tag: a
+Text: Editorial is outTag: div
+Text: Tag: p
+Text: Tag: a
+Text: Full text and comments »Tag: p
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: span
+Text: Announcement ofTag: a
+Text: Educational Codeforces Round 148 (Rated for Div. 2)Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: span
+Text: +58Tag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: div
+Text: Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: a
+Text: awooTag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: span
+Text: 4 days agoTag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: a
+Text: 165Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: a
+Text: Tag: p
+Text: Codeforces Round 872 (Div. 1 & 2)Tag: a
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: ByTag: a
+Text: RedLycorisTag: div
+Text: ,Tag: a
+Text: historyTag: div
+Text: ,Tag: span
+Text: 3 weeks agoTag: div
+Text: ,Tag: div
+Text: Tag: span
+Text: Tag: div
+Text: Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: p
+Text: Hello Codeforces! ?????????Tag: p
+Text: We are glad to invite you to participate inTag: a
+Text: Codeforces Round 872 (Div. 1)Tag: p
+Text: andTag: a
+Text: Codeforces Round 872 (Div. 2)Tag: p
+Text: onTag: span
+Text: May/08/2023 15:05 (Moscow time)Tag: p
+Text: .Tag: strong
+Text: Please note the unusual start time.Tag: p
+Text: This round is rated forTag: strong
+Text: all the participantsTag: p
+Text: . You will be given 5 problems (one of which is divided into two subtasks) and 2 hours to solve them in each division.Tag: p
+Text: Assume you areTag: a
+Text: YuezhengLingTag: p
+Text: , and in this round, your best friendTag: a
+Text: LuoTianYiTag: p
+Text: will give you several problems to solve.Tag: p
+Text: (Tag: a
+Text: LuoTianYiTag: p
+Text: is the left one andTag: a
+Text: YuezhengLingTag: p
+Text: is the right one)Tag: p
+Text: We would like to thank:Tag: div
+Text: Tag: ol
+Text: Tag: a
+Text: RedLycorisTag: p
+Text: ,Tag: a
+Text: CrTsIrTag: p
+Text: ,Tag: a
+Text: Gyy_cjTag: p
+Text: ,Tag: a
+Text: SanweiTreapTag: p
+Text: andTag: a
+Text: GeZhiyuanTag: p
+Text: for writing the problems.Tag: ol
+Text: Tag: a
+Text: Artyom123Tag: p
+Text: for coordinating the round.Tag: ol
+Text: Tag: a
+Text: MikeMirzayanovTag: p
+Text: for great Codeforces and Polygon platforms.Tag: ol
+Text: Tag: span
+Text: HTag: a
+Text: e_RenTag: p
+Text: ,Tag: span
+Text: oTag: a
+Text: rzdevinwangTag: p
+Text: for our red suns testing the round.Tag: ol
+Text: Tag: a
+Text: QingyuTag: p
+Text: ,Tag: a
+Text: zimphaTag: p
+Text: ,Tag: a
+Text: themoonTag: p
+Text: ,Tag: a
+Text: CryingTag: p
+Text: ,Tag: a
+Text: rui_erTag: p
+Text: ,Tag: a
+Text: Kevin114514Tag: p
+Text: ,Tag: a
+Text: LynkcatTag: p
+Text: ,Tag: a
+Text: lgswdnTag: p
+Text: ,Tag: a
+Text: FreshP_0325Tag: p
+Text: ,Tag: a
+Text: YuuTag: p
+Text: for red testing the round.Tag: ol
+Text: Tag: a
+Text: KbltQaQTag: p
+Text: ,Tag: a
+Text: LHQingTag: p
+Text: ,Tag: a
+Text: Forever_PursuitTag: p
+Text: ,Tag: a
+Text: NemanjaSo2005Tag: p
+Text: ,Tag: a
+Text: geospizaTag: p
+Text: ,Tag: a
+Text: METHOD_METAFALICATag: p
+Text: ,Tag: a
+Text: maoweishouTag: p
+Text: ,Tag: a
+Text: welleythTag: p
+Text: ,Tag: a
+Text: EasonTAOTag: p
+Text: ,Tag: a
+Text: RushroomTag: p
+Text: ,Tag: a
+Text: GhealTag: p
+Text: ,Tag: a
+Text: rsjTag: p
+Text: for orange testing the round.Tag: ol
+Text: Tag: a
+Text: Error_YuanTag: p
+Text: ,Tag: a
+Text: fishy15Tag: p
+Text: ,Tag: a
+Text: LyricallyTag: p
+Text: .Tag: a
+Text: valeriuTag: p
+Text: ,Tag: a
+Text: yash_0402Tag: p
+Text: ,Tag: a
+Text: smoke_bellewTag: p
+Text: for purple testing the round.Tag: ol
+Text: Tag: a
+Text: LRL65Tag: p
+Text: ,Tag: a
+Text: ayhan23Tag: p
+Text: ,Tag: a
+Text: ZhangxuyangTag: p
+Text: ,Tag: a
+Text: Koful123Tag: p
+Text: ,Tag: a
+Text: playerr17Tag: p
+Text: ,Tag: a
+Text: AhmedEzzatGTag: p
+Text: for blue testing the round.Tag: ol
+Text: Tag: a
+Text: zhy137036Tag: p
+Text: for green testing the round.Tag: ol
+Text: Tag: a
+Text: tibinyteTag: p
+Text: for gray testing the round.Tag: ol
+Text: Tag: p
+Text: YouTag: li
+Text: for participating in this round.Tag: ol
+Text: Tag: strong
+Text: UPD: Scoring distribution:Tag: p
+Text: Div.1: 500 – (500+750) – 1750 – 2250 – 3000Tag: p
+Text: Div.2: 500 – 1000 – 1500 – (1000+1250) – 2750Tag: strong
+Text: UPDTag: p
+Text: : Editorial is availableTag: a
+Text: hereTag: strong
+Text: UPDTag: p
+Text: :Tag: strong
+Text: WinnersTag: p
+Text: !Tag: strong
+Text: Div 2:Tag: div
+Text: Tag: ul
+Text: Tag: a
+Text: Hex_10EFFB_Tag: ul
+Text: Tag: a
+Text: cyfmdTag: ul
+Text: Tag: a
+Text: sinsop90Tag: ul
+Text: Tag: a
+Text: Yuki__S2008Tag: ul
+Text: Tag: a
+Text: gujialiang123Tag: ul
+Text: Tag: strong
+Text: Div 1:Tag: div
+Text: Tag: ul
+Text: Tag: span
+Text: jTag: a
+Text: ianglyTag: ul
+Text: Tag: span
+Text: mTag: a
+Text: aroonrkTag: ul
+Text: Tag: a
+Text: huzhaoyangTag: ul
+Text: Tag: span
+Text: UTag: a
+Text: m_nikTag: ul
+Text: Tag: a
+Text: wangzijiTag: ul
+Text: Tag: div
+Text: Tag: p
+Text: Tag: a
+Text: Full text and comments »Tag: p
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: span
+Text: Announcement ofTag: a
+Text: Codeforces Round 872 (Div. 1)Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: span
+Text: Announcement ofTag: a
+Text: Codeforces Round 872 (Div. 2)Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: span
+Text: +780Tag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: div
+Text: Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: a
+Text: RedLycorisTag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: span
+Text: 3 weeks agoTag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: a
+Text: 274Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: a
+Text: Tag: p
+Text: Codeforces Round 871 (Div. 4)Tag: a
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: ByTag: a
+Text: SlavicGTag: div
+Text: ,Tag: a
+Text: historyTag: div
+Text: ,Tag: span
+Text: 10 days agoTag: div
+Text: ,Tag: div
+Text: Tag: span
+Text: Tag: div
+Text: Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: p
+Text: Hey, hi Codeforces!Tag: p
+Text: It'sTag: a
+Text: mesanuTag: p
+Text: ,Tag: a
+Text: flamestormTag: p
+Text: and me and we are very excited to invite you toTag: a
+Text: Codeforces Round 871 (Div. 4)Tag: p
+Text: ! It starts onTag: span
+Text: May/06/2023 17:35 (Moscow time)Tag: p
+Text: .Tag: p
+Text: We worked swiftly to tailor the problems for this contest, so we hope you will enjoy them! We tried to make the statements short, epic and concise.Tag: p
+Text: The format of the event will be identical to Div. 3 rounds:Tag: div
+Text: Tag: ul
+Text: Tag: li
+Text: 5-8 tasks;Tag: ul
+Text: Tag: li
+Text: ICPC rules with a penalty of 10 minutes for an incorrect submission;Tag: ul
+Text: Tag: li
+Text: 12-hour phase of open hacks after the end of the round (hacks do not give additional points)Tag: ul
+Text: Tag: li
+Text: after the end of the open hacking phase, all solutions will be tested on the updated set of tests, and the ratings recalculatedTag: ul
+Text: Tag: li
+Text: by default, only "trusted" participants are shown in the results table (but the rating will be recalculated for all with initial ratings less than 1400 or you are an unrated participant/newcomer).Tag: ul
+Text: Tag: p
+Text: We urge participants whose rating is 1400+ not to register new accounts for the purpose of narcissism but to take part unofficially. Please do not spoil the contest for the official participants.Tag: p
+Text: OnlyTag: em
+Text: trusted participants of the fourth divisionTag: p
+Text: will be included in the official standings table. This is a forced measure for combating unsporting behavior. To qualify asTag: em
+Text: a trusted participant of the fourth divisionTag: p
+Text: , you must:Tag: div
+Text: Tag: ul
+Text: Tag: li
+Text: take part in at least five rated rounds (and solve at least one problem in each of them),Tag: ul
+Text: Tag: li
+Text: do not have a point of 1400 or higher in the rating.Tag: ul
+Text: Tag: strong
+Text: Regardless of whether you are a trusted participant of the fourth division or not, if your rating is less than 1400 (or you are a newcomer/unrated), then the round will be rated for you.Tag: p
+Text: Many thanks to all testers:Tag: a
+Text: RedstoneGamer22Tag: p
+Text: ,Tag: a
+Text: tibinyteTag: p
+Text: ,Tag: a
+Text: sandry24Tag: p
+Text: ,Tag: a
+Text: jampmTag: p
+Text: ,Tag: a
+Text: haochenkangTag: p
+Text: ,Tag: a
+Text: misterTag: p
+Text: ,Tag: a
+Text: VladosiyaTag: p
+Text: ,Tag: a
+Text: _Vanilla_Tag: p
+Text: ,Tag: a
+Text: Phantom_PerformerTag: p
+Text: ,Tag: a
+Text: ScarletSTag: p
+Text: ,Tag: a
+Text: NintsiChkhaidzeTag: p
+Text: ,Tag: a
+Text: keta_tsimakuridzeTag: p
+Text: ,Tag: a
+Text: Dominater069Tag: p
+Text: ,Tag: a
+Text: GhealTag: p
+Text: ,Tag: a
+Text: BakryTag: p
+Text: !Tag: p
+Text: And thanks toTag: a
+Text: VladosiyaTag: p
+Text: for russian statement translations!Tag: p
+Text: We suggest reading all of the problems and hope you will find them interesting!Tag: strong
+Text: Good Luck and have fun!!Tag: em
+Text: Are you ready for it?Tag: strong
+Text: UPD:Tag: p
+Text: Tag: a
+Text: EditorialTag: p
+Text: is out!Tag: div
+Text: Tag: p
+Text: Tag: a
+Text: Full text and comments »Tag: p
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: span
+Text: Announcement ofTag: a
+Text: Codeforces Round 871 (Div. 4)Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: span
+Text: Tag: a
+Text: codeforces round 871Tag: span
+Text: ,Tag: div
+Text: Tag: span
+Text: Tag: a
+Text: #div4Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: span
+Text: +241Tag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: div
+Text: Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: a
+Text: SlavicGTag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: span
+Text: 10 days agoTag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: a
+Text: 219Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: a
+Text: Tag: p
+Text: Codeforces Round #870 (Div. 2)Tag: a
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: ByTag: a
+Text: okwedookTag: div
+Text: ,Tag: span
+Text: 11 days agoTag: div
+Text: ,Tag: div
+Text: Tag: span
+Text: Tag: div
+Text: Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: p
+Text: Hi, Codeforces!Tag: p
+Text: I am glad to invite you to take part inTag: a
+Text: Codeforces Round #870 (Div. 2)Tag: p
+Text: , which will take place onTag: span
+Text: May/05/2023 17:35 (Moscow time)Tag: p
+Text: . The round will beTag: strong
+Text: rated for the participants with rating lower than 2100Tag: p
+Text: . Participants from the first division are also welcomed to take part out of competition.Tag: p
+Text: You will be givenTag: strong
+Text: 2 hoursTag: p
+Text: to solveTag: strong
+Text: 6 problemsTag: p
+Text: . All the problems were authored and prepared by me. One of the problems is interactive, please readTag: a
+Text: the guide of interactive problemsTag: p
+Text: before the contest.Tag: p
+Text: I would also like to thank:Tag: ul
+Text: Tag: li
+Text: Tag: a
+Text: AkulyatTag: li
+Text: for excellent coordination and help improving the problems!Tag: ul
+Text: Tag: li
+Text: Tag: a
+Text: arzhantsev64Tag: li
+Text: ,Tag: a
+Text: InversionSpacesTag: li
+Text: ,Tag: a
+Text: Aleks5dTag: li
+Text: ,Tag: a
+Text: PO3OBAR_BblnbTag: li
+Text: ,Tag: a
+Text: DanWallgunTag: li
+Text: ,Tag: a
+Text: Dominater069Tag: li
+Text: ,Tag: a
+Text: AlperenTTag: li
+Text: ,Tag: a
+Text: SertTag: li
+Text: ,Tag: a
+Text: sdlTag: li
+Text: ,Tag: a
+Text: DaryuszTag: li
+Text: ,Tag: a
+Text: fishy15Tag: li
+Text: for testing the round and giving valuable feedback.Tag: ul
+Text: Tag: li
+Text: Special thanks toTag: a
+Text: SertTag: li
+Text: for finding a crucial bug in one of the problems!Tag: ul
+Text: Tag: li
+Text: Tag: a
+Text: MikeMirzayanovTag: li
+Text: for great Codeforces and Polygon platforms!Tag: p
+Text: Scoring: $$$500-1000-1500-2000-2750-3250$$$.Tag: p
+Text: Don't forget to read ALL the problems. I wish you good luck and high ratings!Tag: p
+Text: I tried my best to create some good problems and clear short statements, so I hope you'll enjoy the round and find a problem you like :)Tag: strong
+Text: UPDTag: p
+Text: :Tag: a
+Text: EditorialTag: strong
+Text: UPD:Tag: p
+Text: Winners and First-to-solveTag: p
+Text: Div1 + Div2Tag: div
+Text: Tag: table
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: th
+Text: PlaceTag: tr
+Text: Tag: th
+Text: ParticipantTag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: th
+Text: 1Tag: tr
+Text: Tag: th
+Text: Tag: span
+Text: ATag: a
+Text: _GTag: th
+Text: Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: th
+Text: 2Tag: tr
+Text: Tag: th
+Text: Tag: a
+Text: RubikunTag: th
+Text: Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: th
+Text: 3Tag: tr
+Text: Tag: th
+Text: Tag: a
+Text: kotatsugameTag: th
+Text: Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: th
+Text: 4Tag: tr
+Text: Tag: th
+Text: Tag: a
+Text: 244mhqTag: th
+Text: Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: th
+Text: 5Tag: tr
+Text: Tag: th
+Text: Tag: a
+Text: risujirohTag: th
+Text: Tag: tr
+Text: Tag: tbody
+Text: Tag: table
+Text: Tag: p
+Text: Div2Tag: div
+Text: Tag: table
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: th
+Text: PlaceTag: tr
+Text: Tag: th
+Text: ParticipantTag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: th
+Text: 1Tag: tr
+Text: Tag: th
+Text: Tag: a
+Text: PerfecttTag: th
+Text: Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: th
+Text: 2Tag: tr
+Text: Tag: th
+Text: Tag: a
+Text: HoveryTag: th
+Text: Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: th
+Text: 3Tag: tr
+Text: Tag: th
+Text: Tag: a
+Text: UmajiHidakataTag: th
+Text: Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: th
+Text: 4Tag: tr
+Text: Tag: th
+Text: Tag: a
+Text: ivatopuriaTag: th
+Text: Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: th
+Text: 5Tag: tr
+Text: Tag: th
+Text: Tag: a
+Text: wrihapcodTag: th
+Text: Tag: tr
+Text: Tag: tbody
+Text: Tag: table
+Text: Tag: p
+Text: First-to-solveTag: div
+Text: Tag: table
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: th
+Text: TaskTag: tr
+Text: Tag: th
+Text: ParticipantTag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: th
+Text: ATag: tr
+Text: Tag: th
+Text: Tag: span
+Text: aTag: a
+Text: rvindf232Tag: th
+Text: Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: th
+Text: BTag: tr
+Text: Tag: th
+Text: Tag: span
+Text: ATag: a
+Text: _GTag: th
+Text: Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: th
+Text: CTag: tr
+Text: Tag: th
+Text: Tag: span
+Text: kTag: a
+Text: sun48Tag: th
+Text: Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: th
+Text: DTag: tr
+Text: Tag: th
+Text: Tag: a
+Text: kaiboyTag: th
+Text: Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: th
+Text: ETag: tr
+Text: Tag: th
+Text: Tag: a
+Text: wsyearTag: th
+Text: Tag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: th
+Text: FTag: tr
+Text: Tag: th
+Text: Tag: a
+Text: triple__aTag: th
+Text: Tag: tr
+Text: Tag: tbody
+Text: Tag: table
+Text: Tag: div
+Text: Tag: p
+Text: Tag: a
+Text: Full text and comments »Tag: p
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: span
+Text: Announcement ofTag: a
+Text: Codeforces Round 870 (Div. 2)Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: span
+Text: Tag: a
+Text: #announcementTag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: span
+Text: +131Tag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: div
+Text: Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: a
+Text: okwedookTag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: span
+Text: 11 days agoTag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: a
+Text: 169Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: a
+Text: Tag: p
+Text: Codeforces Round #869Tag: a
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: ByTag: a
+Text: adamantTag: div
+Text: ,Tag: a
+Text: historyTag: div
+Text: ,Tag: span
+Text: 3 weeks agoTag: div
+Text: ,Tag: div
+Text: Tag: span
+Text: Tag: div
+Text: Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: p
+Text: Hi everyone!Tag: p
+Text: It's been a while since I set problems for Codeforces competitions, so I hope that you had sufficient opportunity to rest before dealing with my problems again. Oh, no-no, there's nothing to worry about! Probably! I promise!Tag: a
+Text: jeroenodbTag: p
+Text: andTag: a
+Text: adamantTag: p
+Text: (that's me!) are happy to invite you toTag: a
+Text: Codeforces Round 869 (Div. 1)Tag: p
+Text: andTag: a
+Text: Codeforces Round 869 (Div. 2)Tag: p
+Text: which are going to take place atTag: span
+Text: Apr/29/2023 17:35 (Moscow time)Tag: p
+Text: . Participants with a rating strictly lower than 1900 will participate in Division 2, while participants with a rating of at least 1900 will participate in Division 1.Tag: p
+Text: All the problems are prepared by us, and we would like to thank:Tag: div
+Text: Tag: ul
+Text: Tag: a
+Text: dario2994Tag: li
+Text: for rejecting sufficient amount of problems for me to be able to setTag: a
+Text: Oleksandr Kulkov Contest 3Tag: li
+Text: , for thorough and dedicated coordination and for suggesting one of the problem ideas for the round.Tag: ul
+Text: Tag: a
+Text: izbanTag: li
+Text: ,Tag: span
+Text: gTag: a
+Text: amegameTag: li
+Text: ,Tag: a
+Text: tfgTag: li
+Text: ,Tag: a
+Text: fedimserTag: li
+Text: ,Tag: span
+Text: ETag: a
+Text: ndagorionTag: li
+Text: ,Tag: a
+Text: norTag: li
+Text: ,Tag: a
+Text: rivalqTag: li
+Text: ,Tag: a
+Text: errorgornTag: li
+Text: ,Tag: span
+Text: aTag: a
+Text: ntontrygubO_oTag: li
+Text: ,Tag: a
+Text: redpandaTag: li
+Text: ,Tag: a
+Text: Runtime-Terr0rTag: li
+Text: ,Tag: a
+Text: izhangTag: li
+Text: ,Tag: a
+Text: EveruleTag: li
+Text: ,Tag: a
+Text: NemanjaSo2005Tag: li
+Text: ,Tag: a
+Text: ak2006Tag: li
+Text: ,Tag: a
+Text: ayhan23Tag: li
+Text: ,Tag: a
+Text: SlavicGTag: li
+Text: ,Tag: a
+Text: c_plus_plusTag: li
+Text: ,Tag: span
+Text: aTag: a
+Text: miyaTag: li
+Text: ,Tag: a
+Text: willy108Tag: li
+Text: ,Tag: a
+Text: madlogicTag: li
+Text: ,Tag: a
+Text: LeticiaFCSTag: li
+Text: ,Tag: a
+Text: tanus_eraTag: li
+Text: ,Tag: a
+Text: nigusTag: li
+Text: ,Tag: a
+Text: PlurmTag: li
+Text: ,Tag: a
+Text: mathdude42Tag: li
+Text: ,Tag: a
+Text: SajidZakariaTag: li
+Text: ,Tag: a
+Text: ace-in-the-holeTag: li
+Text: ,Tag: a
+Text: InternetPerson10Tag: li
+Text: ,Tag: a
+Text: alwynTag: li
+Text: ,Tag: a
+Text: -is-this-fft-Tag: li
+Text: ,Tag: a
+Text: DJeniUpTag: li
+Text: andTag: span
+Text: dTag: a
+Text: orijanlendvajTag: li
+Text: for testing and/or valuable feedback and insights about the problems.Tag: ul
+Text: Tag: a
+Text: MikeMirzayanovTag: li
+Text: for Codeforces and Polygon andTag: span
+Text: KTag: a
+Text: ANTag: li
+Text: for all his effort in coordinating coordinators :)Tag: ul
+Text: Tag: p
+Text: In both divisions, you will haveTag: strong
+Text: 2 hours and 15 minutesTag: p
+Text: to solveTag: strong
+Text: 6 problemsTag: p
+Text: .Tag: p
+Text: Score distribution in both divisions:Tag: strong
+Text: 500 — 1000 — 1250 — 2000 — 2500 — 3000Tag: p
+Text: .Tag: p
+Text: Good luck and have fun!Tag: p
+Text: TheTag: a
+Text: editorialTag: p
+Text: is out.Tag: p
+Text: Congratulations to the winners!Tag: strong
+Text: Div. 1Tag: p
+Text: :Tag: div
+Text: Tag: ol
+Text: Tag: a
+Text: A_GTag: ol
+Text: Tag: span
+Text: tTag: a
+Text: ouristTag: ol
+Text: Tag: span
+Text: eTag: a
+Text: cnerwalaTag: ol
+Text: Tag: span
+Text: fTag: a
+Text: antasyTag: ol
+Text: Tag: span
+Text: QTag: a
+Text: AQAutoMatonTag: ol
+Text: Tag: strong
+Text: Div. 2Tag: p
+Text: :Tag: div
+Text: Tag: ol
+Text: Tag: a
+Text: RGB_ICPC4Tag: ol
+Text: Tag: a
+Text: zhukovalizaTag: ol
+Text: Tag: a
+Text: lintdTag: ol
+Text: Tag: a
+Text: -LAP-Tag: ol
+Text: Tag: a
+Text: STOCTag: ol
+Text: Tag: div
+Text: Tag: p
+Text: Tag: a
+Text: Full text and comments »Tag: p
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: span
+Text: Announcement ofTag: a
+Text: Codeforces Round 869 (Div. 1)Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: span
+Text: Announcement ofTag: a
+Text: Codeforces Round 869 (Div. 2)Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: span
+Text: Tag: a
+Text: 869Tag: span
+Text: ,Tag: div
+Text: Tag: span
+Text: Tag: a
+Text: div1 + div2Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: span
+Text: +318Tag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: div
+Text: Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: a
+Text: adamantTag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: span
+Text: 3 weeks agoTag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: a
+Text: 168Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: a
+Text: Tag: p
+Text: Codeforces Round #868 (Div.2)Tag: a
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: ByTag: a
+Text: Igor_ParfenovTag: div
+Text: ,Tag: a
+Text: historyTag: div
+Text: ,Tag: span
+Text: 3 weeks agoTag: div
+Text: ,Tag: div
+Text: Tag: span
+Text: Tag: div
+Text: Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: p
+Text: Hello!Tag: p
+Text: OnTag: span
+Text: Apr/27/2023 17:35 (Moscow time)Tag: p
+Text: we will hostTag: a
+Text: Codeforces Round 868 (Div. 2)Tag: p
+Text: .Tag: p
+Text: The problems were written and prepared byTag: a
+Text: Igor_ParfenovTag: p
+Text: .Tag: p
+Text: I would like to thank everyone who made this round possible:Tag: div
+Text: Tag: ul
+Text: Tag: a
+Text: awooTag: li
+Text: ,Tag: a
+Text: madlogicTag: li
+Text: ,Tag: a
+Text: _Israel_Tag: li
+Text: ,Tag: a
+Text: Vectors_MasterTag: li
+Text: ,Tag: a
+Text: BabaVossTag: li
+Text: ,Tag: a
+Text: AlperenTTag: li
+Text: ,Tag: a
+Text: FzArKTag: li
+Text: ,Tag: a
+Text: Dominater069Tag: li
+Text: ,Tag: a
+Text: m0t9_Tag: li
+Text: ,Tag: a
+Text: rui_erTag: li
+Text: ,Tag: a
+Text: aryan12Tag: li
+Text: ,Tag: a
+Text: purp4everTag: li
+Text: ,Tag: a
+Text: mahersefoTag: li
+Text: ,Tag: a
+Text: ShawermaTag: li
+Text: ,Tag: a
+Text: maomao90Tag: li
+Text: ,Tag: a
+Text: satyam343Tag: li
+Text: ,Tag: a
+Text: errorgornTag: li
+Text: ,Tag: a
+Text: GlemhelTag: li
+Text: for testing the round and providing feedback to the problemsTag: ul
+Text: Tag: a
+Text: adedalicTag: li
+Text: , for coordination of the roundTag: ul
+Text: Tag: a
+Text: MikeMirzayanovTag: li
+Text: , for Codeforces and Polygon platformsTag: ul
+Text: Tag: li
+Text: All participantsTag: ul
+Text: Tag: p
+Text: This round will beTag: strong
+Text: rated for participants with rating lower than 2100Tag: p
+Text: .Tag: p
+Text: You will have 2 hours to solve 6 problems.Tag: p
+Text: Score distribution:Tag: strong
+Text: 500 — 1000 — 1250 — 2000 — 2000 — 2500Tag: p
+Text: .Tag: p
+Text: Good luck!Tag: strong
+Text: UPDTag: p
+Text: :Tag: a
+Text: EditorialTag: strong
+Text: UPDTag: p
+Text: : Congratulations to the Winners!Tag: p
+Text: Div.2:Tag: div
+Text: Tag: ol
+Text: Tag: a
+Text: Low-Deny-CupTag: ol
+Text: Tag: a
+Text: psz6Tag: ol
+Text: Tag: a
+Text: BULBULBULTag: ol
+Text: Tag: a
+Text: EpysetTag: ol
+Text: Tag: a
+Text: chenguoyiTag: ol
+Text: Tag: p
+Text: Div.1 + Div.2:Tag: div
+Text: Tag: ol
+Text: Tag: span
+Text: STag: a
+Text: SRS_Tag: ol
+Text: Tag: span
+Text: mTag: a
+Text: aspyTag: ol
+Text: Tag: span
+Text: RTag: a
+Text: ubikunTag: ol
+Text: Tag: span
+Text: hTag: a
+Text: eno239Tag: ol
+Text: Tag: a
+Text: CrystallyTag: ol
+Text: Tag: div
+Text: Tag: p
+Text: Tag: a
+Text: Full text and comments »Tag: p
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: span
+Text: Announcement ofTag: a
+Text: Codeforces Round 868 (Div. 2)Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: span
+Text: +350Tag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: div
+Text: Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: a
+Text: Igor_ParfenovTag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: span
+Text: 3 weeks agoTag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: a
+Text: 184Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: a
+Text: Tag: p
+Text: ICPC 2023 Online Spring Challenge powered by HuaweiTag: a
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: ByTag: a
+Text: ICPCNewsTag: div
+Text: ,Tag: span
+Text: 3 months agoTag: div
+Text: ,Tag: div
+Text: Tag: span
+Text: Tag: div
+Text: Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: p
+Text: Hello, Codeforces!Tag: strong
+Text: UPD:Tag: p
+Text: Challenge is over. You can find resultsTag: a
+Text: in this postTag: p
+Text: We are happy to invite you to an exciting online event: ICPC 2023 Online Spring Challenge powered by Huawei, which will start onTag: a
+Text: April 13, 2023, 11:00 UTCTag: p
+Text: .Tag: p
+Text: In this Challenge, you will have a unique chance:Tag: div
+Text: Tag: ul
+Text: Tag: li
+Text: to compete during 14 days online challengeTag: ul
+Text: Tag: li
+Text: to solve 1 exciting problem prepared by HuaweiTag: ul
+Text: Tag: li
+Text: to win amazing prizes from Huawei!Tag: ul
+Text: Tag: p
+Text: As a special prize, Huawei together with ICPC Foundation will provide the travel trip to the 46th Annual ICPC World Finals in a guest role!Tag: p
+Text: Everyone is welcome to participate. It is an individual competition.Tag: strong
+Text: ICPC 2023 Online Spring Challenge powered by Huawei (open to the public):Tag: p
+Text: Tag: p
+Text: Start: April 13, 2023 11:00 UTC (UTC+0)Tag: p
+Text: Finish: April 27, 2023 10:59 UTC (UTC+0)Tag: p
+Text: We hope you'll enjoy this complex yet very exciting Challenge!Tag: h4
+Text: ProblemTag: p
+Text: This time we’re delighted to provide you with a new challenging problem from Huawei —Tag: strong
+Text: Buffer Sharing in Multi-Tenant Database EnvironmentTag: p
+Text: , which is prepared by Huawei 2012 Labs and Huawei Cloud Computing.Tag: p
+Text: Nowadays everyone uses databases directly or indirectly. For example, databases of service providers store shopping records, transaction records, or ticket purchase records. During this challenge, you will work with the multi-tenant database, in which a single database instance is divided into multiple virtual sub-databases, serving different tenants of cloud service.Tag: p
+Text: In such databases, different tenants need to be isolated from each other to prevent services from affecting each other. Therefore, buffer is considered as an important resource for management of large amount of data. When the amount of data in the database buffer reaches the maximum value, the database buffer evicts some data from the memory based on the eviction algorithm and loads new data pages from the disk. Your goal is to optimize sharing and isolation of database buffers in the multi-tenant database. While replacement algorithms considered in this contest be one of the core algorithms, we believe there are multiple approaches one can try here, and some crossover of the algorithms will also increase your chances to win!Tag: div
+Text: Tag: center
+Text: Tag: a
+Text: REGISTERTag: center
+Text: Tag: h4
+Text: PrizesTag: div
+Text: Tag: table
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: span
+Text: RankTag: tr
+Text: Tag: span
+Text: PrizeTag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: tr
+Text: Tag: td
+Text: Grand Prize (Rank 1)Tag: tr
+Text: Tag: td
+Text: € 15 000 EUR +Tag: a
+Text: the travel trip to the 46th Annual ICPC World Finals in a guest roleTag: td
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: tr
+Text: Tag: td
+Text: First Prize (Rank 2-10)Tag: tr
+Text: Tag: td
+Text: € 8,000 EURTag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: Second Prize (Rank 11-30)Tag: tr
+Text: Tag: td
+Text: € 3,000 EURTag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: Third Prize (Rank 31-60):Tag: tr
+Text: Tag: td
+Text: € 800 EURTag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: td
+Text: TOP 200 ParticipantsTag: tr
+Text: Tag: td
+Text: Souvenir T-shirtTag: tr
+Text: Tag: tbody
+Text: Tag: tr
+Text: Tag: span
+Text: * If the allocated Huawei Challenge prize cannot be delivered to your region for any reason it may be replaced by another prize of the same value (if no legal restrictions), at the discretion of the Sponsor.Tag: tr
+Text: Tag: tr
+Text: Tag: p
+Text: To be eligible for Certificates of Participation and to win prizes you are required to register atTag: a
+Text: https://icpc.global/regionals/finder/Spring-Challenge-2022Tag: p
+Text: by April 26th.Tag: p
+Text: If you are an employee of Huawei, we invite you to participate in a competition in a special corporate scoreboard. To do this, register at the link in the secretTag: a
+Text: Codeforces groupTag: p
+Text: . Please note that you must register even if you already have a Codeforces account, as this group has its own separate account system. Good luck!Tag: h4
+Text: Challenge Rules and ConditionsTag: p
+Text: By participating in this Challenge, you agree to theTag: a
+Text: Conditions of Participation and Challenge RulesTag: p
+Text: . If you cannot access this document, please emailTag: span
+Text: [email protected]Tag: strong
+Text: Good luck, we hope this will be fun!Tag: p
+Text: Tag: h4
+Text: Update, as of April 27Tag: p
+Text: Congratulations to all the participants of the ICPC 2023 Online Spring Challenge powered by Huawei!Tag: p
+Text: As stated in the problem statement, the jury needs to test the latest non-zero score submissions on the final set of tests after the end of the contest. Results will be announced no later than May 1, 2023Tag: p
+Text: If you registered for the Challenge by April 26th and submitted at least one response, an ICPC Certificate of Participation will be posted on your ICPC Challenge Team Record in the “Attachments” section by the end of May.Tag: h4
+Text: Update, as of April 29Tag: p
+Text: Please ensure you register on ICPC.global using the same email as your Codeforces account no later than Fri, May 5th in order to be eligible for prizes and a Challenge certificate. If you have already registered on both platforms, please ensure your ICPC profile email matches the email used on Codeforces.Tag: h4
+Text: Update, as of May 1Tag: p
+Text: We are glad to announce the completion of the ICPC 2023 Online Spring Challenge powered by Huawei and announce its results. Thank you very much for your interest in the competition. It was exciting for us to follow the results. We hope you enjoyed the challenges.Tag: p
+Text: All tests are done, and we are glad to announce that the results in theTag: a
+Text: StandingsTag: p
+Text: are final!Tag: strong
+Text: Congratulations to winners!Tag: p
+Text: Thanks again for your interest. We will be glad to see you in our future contests.Tag: div
+Text: Tag: p
+Text: Tag: a
+Text: Full text and comments »Tag: p
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: span
+Text: Announcement ofTag: a
+Text: ICPC 2023 Online Spring Challenge powered by HuaweiTag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: span
+Text: Tag: a
+Text: icpcTag: span
+Text: ,Tag: div
+Text: Tag: span
+Text: Tag: a
+Text: challengeTag: span
+Text: ,Tag: div
+Text: Tag: span
+Text: Tag: a
+Text: huaweiTag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: span
+Text: +262Tag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: div
+Text: Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: a
+Text: ICPCNewsTag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: span
+Text: 3 months agoTag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: a
+Text: 197Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: a
+Text: Tag: p
+Text: Codeforces Round #867 (Div.3)Tag: a
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: ByTag: a
+Text: diskotekaTag: div
+Text: ,Tag: span
+Text: 4 weeks agoTag: div
+Text: , translation,Tag: div
+Text: Tag: span
+Text: Tag: div
+Text: Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: p
+Text: Hello!Tag: a
+Text: Codeforces Round 867 (Div. 3)Tag: p
+Text: will start atTag: span
+Text: Apr/24/2023 17:35 (Moscow time)Tag: p
+Text: . You will be offered 6-8 problems with expected difficulties to compose an interesting competition for participants with ratings up to 1600. However, all of you who wish to take part and have a rating of 1600 or higher, can register for the round unofficially.Tag: p
+Text: The round will be hosted by rules of educational rounds (extended ICPC). Thus, solutions will be judged on preliminary tests during the round, and after the round, it will be a 12-hour phase ofTag: strong
+Text: open hacksTag: p
+Text: .Tag: p
+Text: You will be givenTag: strong
+Text: 6-8 problemsTag: p
+Text: andTag: strong
+Text: 2 hours and 15 minutesTag: p
+Text: to solve them.Tag: p
+Text: Note that theTag: strong
+Text: penaltyTag: p
+Text: for the wrong submission in this round isTag: strong
+Text: 10 minutesTag: p
+Text: .Tag: a
+Text: RememberTag: p
+Text: that only the trusted participants of the third division will be included in the official standings table. As it is written by link, this is a compulsory measure for combating unsporting behavior. To qualify as aTag: em
+Text: trusted participant of the third divisionTag: p
+Text: , you must:Tag: div
+Text: Tag: ul
+Text: Tag: li
+Text: take part in at least five rated rounds (and solve at least one problem in each of them)Tag: ul
+Text: Tag: li
+Text: do not have a point of 1900 or higher in the rating.Tag: ul
+Text: Tag: strong
+Text: Regardless of whether you are a trusted participant of the third division or not, if your rating is less than 1600, then the round will be rated for you.Tag: p
+Text: Thanks toTag: a
+Text: MikeMirzayanovTag: p
+Text: for the platform, andTag: a
+Text: VladosiyaTag: p
+Text: for coordination of our work. Problems have been created and written by:Tag: a
+Text: diskotekaTag: p
+Text: ,Tag: a
+Text: pavleknTag: p
+Text: ,Tag: a
+Text: playerr17Tag: p
+Text: ,Tag: a
+Text: isostoTag: p
+Text: .Tag: p
+Text: We would like to thank:Tag: a
+Text: pashkaTag: p
+Text: ,Tag: a
+Text: imachugTag: p
+Text: ,Tag: a
+Text: Alexdat2000Tag: p
+Text: ,Tag: a
+Text: I.GlebTag: p
+Text: ,Tag: a
+Text: Serik2003Tag: p
+Text: ,Tag: a
+Text: TkachDanTag: p
+Text: ,Tag: a
+Text: maksimb2008Tag: p
+Text: ,Tag: a
+Text: _--Tag: p
+Text: ,Tag: a
+Text: 74TrAkToRTag: p
+Text: ,Tag: a
+Text: Gornak40Tag: p
+Text: ,Tag: a
+Text: ut-k8gTag: p
+Text: ,Tag: a
+Text: Rudro25Tag: p
+Text: ,Tag: a
+Text: Jostic11Tag: p
+Text: ,Tag: a
+Text: yorkyTag: p
+Text: ,Tag: a
+Text: tallbee23Tag: p
+Text: ,Tag: a
+Text: ExpertHunterTag: p
+Text: ,Tag: a
+Text: SplatjovTag: p
+Text: ,Tag: a
+Text: NafisTag: p
+Text: ,Tag: a
+Text: vrintleTag: p
+Text: ,Tag: a
+Text: KoT_OsKaRTag: p
+Text: for testing the contest and valuable feedback.Tag: p
+Text: Good luck!Tag: strong
+Text: UPDTag: p
+Text: :Tag: a
+Text: EditorialTag: p
+Text: Tag: div
+Text: Tag: p
+Text: Tag: a
+Text: Full text and comments »Tag: p
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: span
+Text: Announcement ofTag: a
+Text: Codeforces Round 867 (Div. 3)Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: span
+Text: +204Tag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: div
+Text: Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: a
+Text: diskotekaTag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: span
+Text: 4 weeks agoTag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: li
+Text: Tag: a
+Text: 239Tag: li
+Text: Tag: ul
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: ul
+Text: Tag: span
+Text: ?Tag: ul
+Text: Tag: li
+Text: Tag: a
+Text: 1Tag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: a
+Text: 2Tag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: a
+Text: 3Tag: li
+Text: Tag: ul
+Text: Tag: li
+Text: ...Tag: ul
+Text: Tag: li
+Text: Tag: a
+Text: 216Tag: li
+Text: Tag: ul
+Text: Tag: li
+Text: Tag: a
+Text: 217Tag: li
+Text: Tag: ul
+Text: Tag: a
+Text: ?Tag: ul
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: a
+Text: CodeforcesTag: div
+Text: (c) Copyright 2010-2023 Mike MirzayanovTag: div
+Text: Tag: div
+Text: The only programming contests Web 2.0 platformTag: div
+Text: Tag: div
+Text: Server time:Tag: span
+Text: May/15/2023 16:39:56Tag: div
+Text: (j3).Tag: div
+Text: Tag: div
+Text: Desktop version, switch toTag: a
+Text: mobile versionTag: div
+Text: .Tag: div
+Text: Tag: a
+Text: Privacy PolicyTag: div
+Text: Tag: div
+Text: Supported byTag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: User listsTag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: span
+Text: Tag: span
+Text: Tag: span
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: table
+Text: Tag: thead
+Text: Tag: tr
+Text: Tag: th
+Text: NameTag: tr
+Text: Tag: thead
+Text: Tag: table
+Text: Tag: tbody
+Text: Tag: table
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: div
+Text: Tag: body
+Text: Tag: body
+Text: 
