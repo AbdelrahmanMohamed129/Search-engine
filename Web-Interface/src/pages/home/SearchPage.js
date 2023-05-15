@@ -15,7 +15,7 @@ const SearchPage = () => {
   return (
     
     <div className={classes.container}>
-    <h1 className={classes.heading}>Google</h1>
+    <h1 className={classes.heading}>Bingo</h1>
     <div className={classes.search}>
       <input className={classes.searchBar} type="search" onKeyDown={handleClick}/>
       <i className={classes.fa}  >

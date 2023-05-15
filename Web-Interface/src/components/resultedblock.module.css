@@ -1,21 +1,42 @@
 .container{
     display: flex;
     flex-direction: column;
-    margin: 3rem 10rem;
+    margin: 1.5rem 10rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 50%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-a{
-    font-size: 2rem;
-    color:blue
-    
+.title{
+    font-size: 3rem;
+    color:blue;
+    margin-bottom: 0.5rem;
 }
 
-a:visited {
+
+.title:visited {
 color: blueviolet;
 }
 
-a:hover {
+.title:hover {
 text-decoration: underline;
 cursor: pointer;
 
+}
+
+.link{
+    font-size: 2rem;
+    color: rgb(21, 183, 21);
+    margin-bottom: 0.5rem;
+}
+
+.link:hover {
+    text-decoration: underline;
+    cursor: pointer; 
+}
+
+.content{
+    font-size: 1.5rem;
+    color: grey;
 }
