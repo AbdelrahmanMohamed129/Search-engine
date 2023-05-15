@@ -1,3 +1,5 @@
+package indexer;
+
 public class Stem {
 
     public int count;

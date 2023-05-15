@@ -1,3 +1,5 @@
+package indexer;
+
 import com.mongodb.MongoClient;
 import com.mongodb.client.*;
 import com.mongodb.client.model.*;

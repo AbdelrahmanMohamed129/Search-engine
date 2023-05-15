@@ -1,3 +1,4 @@
+package indexer;
 import java.io.FileWriter;
 import java.io.IOException;
 
