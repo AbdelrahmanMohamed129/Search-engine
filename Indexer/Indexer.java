@@ -4,7 +4,7 @@ import com.mongodb.MongoClient;
 import com.mongodb.client.*;
 import com.mongodb.client.model.*;
 
-import java.util.ArrayList;
+import java.util.*;
 
 import org.bson.Document;
 import utils.env;
@@ -35,7 +35,7 @@ public class Indexer {
         /* index on the stemmed words inside each document */
         webpageCollection.createIndex(Indexes.ascending(env.FIELD_STEM_INDEX + "." + env.FIELD_TERM));
 
-        mongoConnection.close();
+        //mongoConnection.close();
     }
 
     public Indexer() {
@@ -46,9 +46,10 @@ public class Indexer {
         /* Get the webpages collection */
         webpagesCollection = myDatabase.getCollection(env.COLLECTION_WEBPAGES);
         /* Close the connection */
-        mongoConnection.close();
+        //mongoConnection.close();
     }
 
+    /* Indexing functionalities */
     public boolean startIndexingURL(String url, org.jsoup.nodes.Document document, ArrayList<String>outlinks) {
         WebpageProcessor processor = new WebpageProcessor(url, document);
         Webpage webpage = processor.webpage;
@@ -69,4 +70,37 @@ public class Indexer {
     public void addWebpageToDB(Webpage webpage) {
         webpagesCollection.insertOne(webpage.convertToDocument());
     }
+
+    /* Ranking helper functionalities */
+
+    public void updateRank(Collection<Webpage>webpages) {
+        List<UpdateOneModel<Document>> updateModels = new ArrayList<>();
+        for (Webpage webpage : webpages) {
+            updateModels.add(new UpdateOneModel<>(
+                    Filters.eq(env.FIELD_ID, webpage._id),
+                    Updates.set(env.FIELD_RANK, webpage.rank)
+            ));
+        }
+        if(!updateModels.isEmpty()) webpagesCollection.bulkWrite(updateModels);
+    }
+
+    /* Get all documents with their outlinks for initial ranking */
+    public HashMap<String, Webpage> getAllWebpagesForRanker() {
+        /* only select outlinks for each url */
+        List<Document> results = webpagesCollection.find()
+                                                   .projection(Projections.include(env.FIELD_URL, env.FIELD_OUTLINKS))
+                                                   .into(new ArrayList<>());
+        HashMap<String, Webpage> webpages = new HashMap<>();
+        for(Document webpage : results) {
+            Webpage objectDocument = new Webpage(webpage);
+            webpages.put(objectDocument.url, objectDocument);
+        }
+        return webpages;
+    }
+
+    /* Searching functionalities */
+    public List<Webpage> searchByIds(List<String>ids) {
+        
+    }
+    
 }

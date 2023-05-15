@@ -1,6 +1,7 @@
 package indexer;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -16,9 +17,19 @@ public class tryindexer {
         // Document doc = Jsoup.connect("http://web.simmons.edu/~grovesd/comm244/notes/week3/html-test-page.html").get();
         // WebpageProcessor me  = new WebpageProcessor("http://web.simmons.edu/~grovesd/comm244/notes/week3/html-test-page.html",doc);
         // Webpage me1 = me.webpage;
-        String now  = getStem("2001");
-        System.out.println(now);
+        
+        Indexer myIndexer = new Indexer();
+        myIndexer.startOver();
+        String[] urls = {
+            "http://web.simmons.edu/~grovesd/comm244/notes/week3/html-test-page.html",
+            "https://ar.wikipedia.org/wiki/%D8%A8%D9%88%D8%A7%D8%A8%D8%A9:%D8%A7%D9%84%D9%84%D8%BA%D8%A9_%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9"
+        };
+        Document doc1 = Jsoup.connect(urls[0]).get();
+        Document doc2 = Jsoup.connect(urls[1]).get();
+        myIndexer.startIndexingURL(urls[0], doc1, new ArrayList<>());
+        myIndexer.startIndexingURL(urls[1], doc2, null);
     }
+
 
     public static String getStem(String word) {
         SnowballStemmer stemmer = new englishStemmer();

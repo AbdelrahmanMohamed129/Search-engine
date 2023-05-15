@@ -13,6 +13,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 import javax.net.ssl.SSLHandshakeException;
 
@@ -33,6 +35,7 @@ public class WebCrawler {
     private int currentPageCount;
     private int numThreads;
     private ExecutorService executor;
+    private final Lock lock = new ReentrantLock();
 
     public WebCrawler(ArrayList<String> seedUrls, int maxPages, int numThreads, Indexer index) {
         this.visitedUrls = ConcurrentHashMap.newKeySet();
@@ -67,6 +70,14 @@ public class WebCrawler {
                 if (url == null) {
                     break;
                 }
+                URI uri_url;
+                try {
+                    uri_url = new URI(url).normalize();
+                    url = uri_url.toString();
+                } catch (URISyntaxException e) {
+                    // TODO Auto-generated catch block
+                    System.err.println("Error normalizing main URL: " + url);
+                }
                 if (!visitedUrls.contains(url)) {
                     try {
                         Document doc = Jsoup.connect(url).get();
@@ -80,23 +91,20 @@ public class WebCrawler {
                                 nextUrl = uri.toString();
                                 linksArray.add(nextUrl);
                             } catch (URISyntaxException e) {
-                                System.err.println("Error normalizing URL: " + nextUrl);
+                                System.err.println("Error normalizing outlink URL: " + nextUrl);
                             }
                         }
 
 
-                        synchronized (this) {
-
-                            if (!visitedUrls.contains(url)){
+                        synchronized (lock) {
+                            if (!visitedUrls.contains(url) && currentPageCount < maxPages){
                             // send to farah
-                            if(index.startIndexingURL(url,doc,linksArray)){
-
-                                visitedUrls.add(url);
-                                currentPageCount++;
-                                System.out.println("Visited: " + url+ "     Number: " + visitedUrls.size());  
-    
-                            } 
-                        }
+                                if(index.startIndexingURL(url,doc,linksArray)){
+                                    visitedUrls.add(url);
+                                    currentPageCount = visitedUrls.size();
+                                    System.out.println("Visited: " + url+ "     Number: " + visitedUrls.size());  
+                                } 
+                            }
                         }
                         
                         int count = 0;
@@ -180,7 +188,11 @@ public class WebCrawler {
 
         long startTime = System.currentTimeMillis();
 
-        WebCrawler crawler = new WebCrawler(seedUrls, 6000, 10, new Indexer());
+        Indexer newIndexer = new Indexer();
+
+        newIndexer.startOver();
+
+        WebCrawler crawler = new WebCrawler(seedUrls, 250, 10, newIndexer);
         crawler.crawl();
 
         // End recording the time
@@ -190,7 +202,7 @@ public class WebCrawler {
         long elapsedTime = endTime - startTime;
 
         // Print the elapsed time
-        System.out.println("Elapsed time: " + elapsedTime + " milliseconds");
+        System.out.println("Elapsed time: " + 1.0*elapsedTime/60000 + " minutes");
 
         // Wait for crawler to finish
         System.out.println("Crawling finished");
