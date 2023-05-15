@@ -1,37 +1,22 @@
 {
-  "Programs": [
+  "results": [
     {
       "id": 1,
-      "title": "Fly To Volunteer",
-      "description": "This is a fun program for kids",
-      "image": "https://have-adream.com/storage/app/uploads/public/636/a70/ab8/636a70ab88782390002704.jpg"
-    },{
+      "title": "Bingo",
+      "link": "www.google.com",
+      "content":"Lorem ipsum <b>dolor</b> sit amet, consectetur adipiscing elit, sed do <b>eiusmod</b> tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
       "id": 2,
-      "title": "Touristic",
-      "description": "This is a fun program for kids",
-      "image": "https://have-adream.com/storage/app/uploads/public/636/a73/e85/636a73e8547de657750882.jpg"
+      "title": "Bingo",
+      "link": "www.google.com",
+      "content":"Lorem ipsum <b>dolor</b> sit amet, consectetur adipiscing elit, sed do <b>eiusmod</b> tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
       "id": 3,
-      "title": "Have a Dream Juniors",
-      "description": "This is a fun program for kids",
-      "image": "https://have-adream.com/storage/app/uploads/public/5e1/efb/a05/5e1efba05350a396278733.png"
-    },
-    {
-      "id": 4,
-      "title": "EU Programs",
-      "description": "This is a fun program for kids",
-      "image": "https://have-adream.com/storage/app/uploads/public/5db/b2f/74a/5dbb2f74ae658161285565.jpeg"
+      "title": "Bingo",
+      "link": "www.google.com",
+      "content":"Lorem ipsum <b>dolor</b> sit amet, consectetur adipiscing elit, sed do <b>eiusmod</b> tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

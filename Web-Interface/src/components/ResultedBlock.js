@@ -2,11 +2,12 @@ import React from "react";
 import classes from "./resultedblock.module.css";
 
 
-const ResultedBlock = () => {
+const ResultedBlock = (props) => {
   return (
     <div className={classes.container}>
-    <a href="https://www.google.com" className={classes.link}>Google</a>
-
+    <a className={classes.title}>{props.title}</a>
+    <a href={props.link} className={classes.link}>{props.link}</a>
+    <div className={classes.content} dangerouslySetInnerHTML={{__html: props.content}}></div>
     </div>
   );
 };
