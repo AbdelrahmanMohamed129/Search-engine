@@ -99,8 +99,8 @@ public class Indexer {
     }
 
     /* Searching functionalities */
-    public List<Webpage> searchByIds(List<String>ids) {
-        
-    }
+    // public List<Webpage> searchByIds(List<String>ids) {
+
+    // }
     
 }
