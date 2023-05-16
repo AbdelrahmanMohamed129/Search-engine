@@ -54,7 +54,7 @@ public class Indexer {
         WebpageProcessor processor = new WebpageProcessor(url, document);
         Webpage webpage = processor.webpage;
 
-        /* If we could process less than 75% of the document, then discard it */
+        /* If we could only process less than 75% of the document, then discard it */
         if(webpage.pageData.isEmpty() || 1.0*processor.processedDataSize/webpage.pageData.length() < 0.75) {
             System.out.println("Indexing: " + url + ". Fail :/");
             return false;
@@ -99,8 +99,58 @@ public class Indexer {
     }
 
     /* Searching functionalities */
-    // public List<Webpage> searchByIds(List<String>ids) {
 
-    // }
+    public List<Webpage> searchIds(List<String>ids, List<String>fields) {
+        List<Document> results = webpagesCollection.find(Filters.in("_id", ids))
+                                .projection(Projections.include(fields))
+                                .into(new ArrayList<>());
+        
+        return convertToWebpages(results);
+    }
+
+    public List<Webpage> searchWords(List<String>stems) {
+        List<Document> results = webpagesCollection
+                                .find(Filters.in(env.FIELD_STEM_INDEX + "." + env.FIELD_TERM,stems))
+                                .into(new ArrayList<>());
+        
+        return convertToWebpages(results);
+    }
+
+    public List<Webpage> searchPhrase(List<String>words) {
+        if(words.isEmpty()) return new ArrayList<>();
+        List<Document> results = webpagesCollection
+                                .find(Filters.all(env.FIELD_TERM_INDEX + "." + env.FIELD_TERM,words))
+                                .into(new ArrayList<>());
+
+        List<Webpage> webpages = convertToWebpages(results);
+
+        String firstWord = words.get(0);
+        List<Webpage> correctWebpages = new ArrayList<>();
+
+        for(Webpage webpage : webpages) {
+            HashMap<String,List<Integer>> termsPositions = webpage.terms;
+            boolean flag = true;
+            for(Integer pos : termsPositions.get(firstWord)) {
+                for (int i = 1; i < words.size(); i++) {
+                    if (Collections.binarySearch(termsPositions.get(words.get(i)), pos + i) < 0) {
+                        flag = false;
+                        break;
+                    }
+                }
+                if(flag == true) correctWebpages.add(webpage);
+            }
+        }
+
+        return correctWebpages;
+    }
+
+    /* Utils */
+    public List<Webpage> convertToWebpages(List<Document> documents) {
+        List<Webpage> webpages = new ArrayList<>();
+        for (Document document : documents) {
+            webpages.add(new Webpage(document));
+        }
+        return webpages;
+    }
     
 }
