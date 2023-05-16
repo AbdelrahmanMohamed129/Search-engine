@@ -219,7 +219,7 @@ public class PageRanker {
     // Function that saves the graph into a file (to remove later)
     private void saveGraph() throws Exception {
         // Write to the edges file
-        PrintWriter pw = new PrintWriter("files/test/graph.txt");
+        PrintWriter pw = new PrintWriter("graph.txt");
         // Write the number of nodes
         pw.println(this.pagesCount);
 

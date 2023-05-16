@@ -162,7 +162,7 @@ public class QueryProcessor {
         //
         // Save search query for later suggestions
         //
-        mIndexer.insertSuggestion(query);
+        mIndexer.addSuggestion(query);
 
         //
         // Rank matching results

@@ -1,37 +1,42 @@
-import React from "react";
+import React, { useEffect } from "react";
 import classes from "./resultpage.module.css";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import ResultedBlock from "../../components/ResultedBlock";
 import axios from "axios";
 
+const jsonp = require('jsonp');
+
 const ResultPage = () => {
   const [results, setResults] = React.useState([]);
   const handleClick = (e) => {
     if (e.key === "Enter") {
-      console.log(e.target.value);
-      getResults();
+      getResults(e.target.value);
+
+
     }
   };
 
-  async function getResults() {
-    try {
-      const response = await axios.get("http://localhost:3001/results");
-      setResults(response.data);
-      console.log(response);
-    } catch (error) {
+
+  async function getResults(query) {
+
+      const response = await axios.get(`http://localhost:8080/search?q=${query}&page=1`).then((response) => {
+        console.log(response.data);
+        setResults(response.data.pages);
+      })
+     .catch(error => {
+      // Handle any errors that occurred during the request
       console.error(error);
-    }
+    });
   }
 
+  // useEffect on results
+  useEffect(() => {
+    console.log(results[1]);
+  }, [results]);
+
   function renderResults(obj) {
-      return (
-        <ResultedBlock
-          key={obj.id}
-          title={obj.title}
-          link={obj.link}
-          content={obj.content}
-        />
-      );
+      // map on resylt using genetratedn index
+      return <ResultedBlock key={obj.url} title={obj.title} url={obj.url} snippet={obj.snippet} />
   }
   return (
     

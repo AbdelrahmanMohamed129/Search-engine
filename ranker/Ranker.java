@@ -76,15 +76,15 @@ public class Ranker {
      
     private void retrieveDocumentsCount() {
         // Get the total number of documents in the database
-        totalDocsCount = mIndexer.getDocumentsCount();
+        totalDocsCount = mIndexer.documentsCount();
 
         // Get the total number of documents containing each of the search query words
         wordsDocsCount = new long[queryWords.size()];
         stemsDocsCount = new long[queryWords.size()];
 
         for (int i = 0; i < queryWords.size(); ++i) {
-            wordsDocsCount[i] = mIndexer.getWordDocumentsCount(queryWords.get(i));
-            stemsDocsCount[i] = mIndexer.getStemDocumentsCount(queryStems.get(i));
+            wordsDocsCount[i] = mIndexer.documentCountForWord(queryWords.get(i));
+            stemsDocsCount[i] = mIndexer.documentCountForStem(queryStems.get(i));
         }
     }
 

@@ -4,7 +4,6 @@ package server;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import utils.env;
 import utils.utilFunctions;
 
 public class Snippetly {
