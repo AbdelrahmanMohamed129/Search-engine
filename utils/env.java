@@ -18,6 +18,7 @@ public class env {
     public static final String COLLECTION_WEBPAGES = "webpages";
     public static final String COLLECTION_WORDS = "words";
     public static final String COLLECTION_STEMS = "stems";
+    public static final String COLLECTION_SUGGESTIONS = "suggestions";
 
     /* Fields */
     public static final String FIELD_ID = "_id";
@@ -34,6 +35,7 @@ public class env {
     public static final String FIELD_STEM_INDEX = "stem-index";
     public static final String FIELD_STEM_COUNT = "count";
     public static final String FIELD_STEM_SCORE = "score";
+    public static final String FIELD_SUGGEST_QUERY = "query";
 
     public static final List<String> FIELDS_FOR_SEARCH_RESULTS = Arrays.asList(
             FIELD_ID,

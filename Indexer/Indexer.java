@@ -15,6 +15,7 @@ public class Indexer {
     private MongoCollection<Document> webpagesCollection;
     private MongoCollection<Document> wordsCollection;
     private MongoCollection<Document> stemsCollection;
+    private MongoCollection<Document> suggestCollection;
 
     public static void startOver() {
         MongoClient mongoConnection = new MongoClient(env.DATABASE_HOST,env.DATABASE_PORT);
@@ -28,6 +29,8 @@ public class Indexer {
         oldWordCollection.drop();
         MongoCollection<Document> oldStemCollection = myDatabase.getCollection(env.COLLECTION_STEMS);
         oldStemCollection.drop();
+        MongoCollection<Document> oldSuggestCollection = myDatabase.getCollection(env.COLLECTION_SUGGESTIONS);
+        oldSuggestCollection.drop();
 
         /* Creating the new webpages collection, empty */
         MongoCollection<Document> webpageCollection = myDatabase.getCollection(env.COLLECTION_WEBPAGES);
@@ -36,7 +39,6 @@ public class Indexer {
         IndexOptions indexOptions = new IndexOptions().unique(true);
 
         /* Creating the indexes on the fields in the webpages collection */
-        /*  index on the actual urls, for fast retreival */
         webpageCollection.createIndex(Indexes.ascending(env.FIELD_URL), indexOptions);
         /* index on the words inside each document */
         webpageCollection.createIndex(Indexes.ascending(env.FIELD_TERM_INDEX + "." + env.FIELD_TERM));
@@ -51,7 +53,10 @@ public class Indexer {
         MongoCollection<Document> stemsCollection = myDatabase.getCollection(env.COLLECTION_STEMS);
         stemsCollection.createIndex(Indexes.ascending(env.FIELD_TERM), indexOptions);
         stemsCollection.createIndex(Indexes.ascending(env.FIELD_URLS + "." + env.FIELD_URL));
-
+        /* Creating the suggestions collection */
+        MongoCollection<Document> suggestCollection = myDatabase.getCollection(env.COLLECTION_STEMS);
+        suggestCollection.createIndex(Indexes.ascending(env.FIELD_SUGGEST_QUERY), indexOptions);
+        suggestCollection.createIndex(Indexes.ascending(env.FIELD_SUGGEST_QUERY));
         //mongoConnection.close();
     }
 
@@ -64,6 +69,7 @@ public class Indexer {
         webpagesCollection = myDatabase.getCollection(env.COLLECTION_WEBPAGES);
         wordsCollection = myDatabase.getCollection(env.COLLECTION_WORDS);
         stemsCollection = myDatabase.getCollection(env.COLLECTION_STEMS);
+        suggestCollection = myDatabase.getCollection(env.COLLECTION_SUGGESTIONS);
         /* Close the connection */
         //mongoConnection.close();
     }
@@ -188,13 +194,6 @@ public class Indexer {
         return convertToWebpages(results);
     }
 
-    public List<Webpage> searchWordsNotInverted(List<String>stems) {
-        List<Document> results = webpagesCollection
-        .find(Filters.in(env.FIELD_STEM_INDEX + "." + env.FIELD_TERM,stems))
-        .into(new ArrayList<>());
-
-        return convertToWebpages(results);
-    }
 
     public List<Webpage> searchPhrase(List<String>words) {
         if(words.isEmpty()) return new ArrayList<>(); 
@@ -248,6 +247,56 @@ public class Indexer {
         return correctWebpages;
     }
 
+    /* Suggestions Functionalities */
+    public List<String> getSuggestions(String query) {
+        List<String> matchedQueries = new ArrayList<>();
+        Document filter = new Document("query", new Document("$regex", "^" + query));
+        List<Document> matchingDocuments = suggestCollection.find(filter).into(new ArrayList<>());
+        for (Document document : matchingDocuments) {
+            matchedQueries.add(document.getString(env.FIELD_SUGGEST_QUERY));
+        }
+        return matchedQueries;
+    }
+
+    public void addSuggestion(String query) {
+        Bson filter = Filters.eq(env.FIELD_SUGGEST_QUERY, query);
+        Bson update = Updates.set(env.FIELD_SUGGEST_QUERY, query);
+        suggestCollection.updateOne(filter,update,new UpdateOptions().upsert(true));
+    }
+    
+    /* Indexer Utils */
+    public List<Webpage> convertToWebpages(List<Document> documents) {
+        List<Webpage> webpages = new ArrayList<>();
+        for (Document document : documents) {
+            webpages.add(new Webpage(document));
+        }
+        return webpages;
+    }
+
+    /* Indexer Utils for Ranker */
+    public long documentsCount() {
+        return webpagesCollection.countDocuments();
+    }
+
+    public long documentCountForWord(String word) {
+        return webpagesCollection.countDocuments(Filters.eq(env.FIELD_STEM_INDEX+"."+env.FIELD_TERM, word));
+    }
+
+    public Webpage findByURL(String url) {
+        Document document = webpagesCollection.find(Filters.eq(env.FIELD_URL, url)).first();
+        return new Webpage(document);
+    }
+    
+    /* Unused functions */
+    
+    public List<Webpage> searchWordsNotInverted(List<String>stems) {
+        List<Document> results = webpagesCollection
+        .find(Filters.in(env.FIELD_STEM_INDEX + "." + env.FIELD_TERM,stems))
+        .into(new ArrayList<>());
+
+        return convertToWebpages(results);
+    }
+
     public List<Webpage> searchPhraseNotInverted(List<String>words) {
         if(words.isEmpty()) return new ArrayList<>();
         List<Document> results = webpagesCollection
@@ -275,28 +324,4 @@ public class Indexer {
 
         return correctWebpages;
     }
-
-    /* Indexer Utils */
-    public List<Webpage> convertToWebpages(List<Document> documents) {
-        List<Webpage> webpages = new ArrayList<>();
-        for (Document document : documents) {
-            webpages.add(new Webpage(document));
-        }
-        return webpages;
-    }
-
-    /* Indexer Utils for Ranker */
-    public long documentsCount() {
-        return webpagesCollection.countDocuments();
-    }
-
-    public long documentCountForWord(String word) {
-        return webpagesCollection.countDocuments(Filters.eq(env.FIELD_STEM_INDEX+"."+env.FIELD_TERM, word));
-    }
-
-    public Webpage findByURL(String url) {
-        Document document = webpagesCollection.find(Filters.eq(env.FIELD_URL, url)).first();
-        return new Webpage(document);
-    }
-    
 }
