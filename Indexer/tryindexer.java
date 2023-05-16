@@ -19,19 +19,27 @@ public class tryindexer {
         // Document doc = Jsoup.connect("http://web.simmons.edu/~grovesd/comm244/notes/week3/html-test-page.html").get();
         // WebpageProcessor me  = new WebpageProcessor("http://web.simmons.edu/~grovesd/comm244/notes/week3/html-test-page.html",doc);
         // Webpage me1 = me.webpage;
-        
+
         Indexer myIndexer = new Indexer();
-        String[] searchwords = {"content", "does" ,"not","have", "an", "english"};
+        String[] searchwords = {"i","am"};
         List<String> stemWords = new ArrayList<>();
         for(String word : searchwords) {
             stemWords.add(getStem(word));
         }
         // List<Webpage> webpages = myIndexer.searchWords(Arrays.asList(searchwords));
-        List<Webpage> webpages = myIndexer.searchPhrase(Arrays.asList(searchwords));
+        // List<Webpage> webpages = myIndexer.searchPhrase(Arrays.asList(searchwords));
+        long startTime = System.currentTimeMillis();
+        List<Webpage> webpages = myIndexer.searchPhrase(stemWords);
+        long endTime = System.currentTimeMillis();
+        long elapsedTime = endTime - startTime;
         for(Webpage webpage : webpages) {
             System.out.println(webpage.url);
         }
         System.out.println(webpages.size());
+
+
+        // Print the elapsed time
+        System.out.println("Elapsed time: " + 1.0*elapsedTime/60000 + " minutes");
     }
 
     public static String getStem(String word) {

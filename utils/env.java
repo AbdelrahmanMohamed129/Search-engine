@@ -16,6 +16,8 @@ public class env {
      *  instead of the inverted index, since we only crawl 6k pages
     */
     public static final String COLLECTION_WEBPAGES = "webpages";
+    public static final String COLLECTION_WORDS = "words";
+    public static final String COLLECTION_STEMS = "stems";
 
     /* Fields */
     public static final String FIELD_ID = "_id";
@@ -27,6 +29,7 @@ public class env {
     public static final String FIELD_OUTLINKS = "outlinks";
     public static final String FIELD_TERM_INDEX = "term-index";
     public static final String FIELD_TERM = "term";
+    public static final String FIELD_URLS = "urls";
     public static final String FIELD_TERM_POSITIONS = "positions";
     public static final String FIELD_STEM_INDEX = "stem-index";
     public static final String FIELD_STEM_COUNT = "count";

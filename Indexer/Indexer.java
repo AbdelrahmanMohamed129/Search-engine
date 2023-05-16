@@ -7,10 +7,14 @@ import com.mongodb.client.model.*;
 import java.util.*;
 
 import org.bson.Document;
+import org.bson.conversions.Bson;
+
 import utils.env;
 
 public class Indexer {
     private MongoCollection<Document> webpagesCollection;
+    private MongoCollection<Document> wordsCollection;
+    private MongoCollection<Document> stemsCollection;
 
     public static void startOver() {
         MongoClient mongoConnection = new MongoClient(env.DATABASE_HOST,env.DATABASE_PORT);
@@ -20,6 +24,10 @@ public class Indexer {
         /* Drop old webpages collection, since drop database is deprecated in mongo driver 3.12 */
         MongoCollection<Document> oldWebpageCollection = myDatabase.getCollection(env.COLLECTION_WEBPAGES);
         oldWebpageCollection.drop();
+        MongoCollection<Document> oldWordCollection = myDatabase.getCollection(env.COLLECTION_WORDS);
+        oldWordCollection.drop();
+        MongoCollection<Document> oldStemCollection = myDatabase.getCollection(env.COLLECTION_STEMS);
+        oldStemCollection.drop();
 
         /* Creating the new webpages collection, empty */
         MongoCollection<Document> webpageCollection = myDatabase.getCollection(env.COLLECTION_WEBPAGES);
@@ -35,6 +43,15 @@ public class Indexer {
         /* index on the stemmed words inside each document */
         webpageCollection.createIndex(Indexes.ascending(env.FIELD_STEM_INDEX + "." + env.FIELD_TERM));
 
+        /* Creating the words collection */
+        MongoCollection<Document> wordsCollection = myDatabase.getCollection(env.COLLECTION_WORDS);
+        wordsCollection.createIndex(Indexes.ascending(env.FIELD_TERM), indexOptions);
+        wordsCollection.createIndex(Indexes.ascending(env.FIELD_URLS + "." + env.FIELD_URL));
+        /* Creating the stems collection */
+        MongoCollection<Document> stemsCollection = myDatabase.getCollection(env.COLLECTION_STEMS);
+        stemsCollection.createIndex(Indexes.ascending(env.FIELD_TERM), indexOptions);
+        stemsCollection.createIndex(Indexes.ascending(env.FIELD_URLS + "." + env.FIELD_URL));
+
         //mongoConnection.close();
     }
 
@@ -45,6 +62,8 @@ public class Indexer {
         MongoDatabase myDatabase = mongoConnection.getDatabase(env.DATABASE_NAME);
         /* Get the webpages collection */
         webpagesCollection = myDatabase.getCollection(env.COLLECTION_WEBPAGES);
+        wordsCollection = myDatabase.getCollection(env.COLLECTION_WORDS);
+        stemsCollection = myDatabase.getCollection(env.COLLECTION_STEMS);
         /* Close the connection */
         //mongoConnection.close();
     }
@@ -69,6 +88,44 @@ public class Indexer {
 
     public void addWebpageToDB(Webpage webpage) {
         webpagesCollection.insertOne(webpage.convertToDocument());
+        /* update words */
+        updateWords(webpage.url, webpage.terms);
+        /* updates stems */
+        updateStems(webpage.url, webpage.stems);
+    }
+
+    public void updateWords(String url, HashMap<String,List<Integer>> terms) {
+        List<WriteModel<Document>> updateModels = new ArrayList<>();
+        UpdateOptions options = new UpdateOptions().upsert(true);
+
+        for (Map.Entry<String, List<Integer>> entry: terms.entrySet()) {
+            Document newURL = new Document(env.FIELD_URL, url).append(env.FIELD_TERM_POSITIONS, entry.getValue());
+            updateModels.add(new UpdateOneModel<>(
+                    Filters.eq(env.FIELD_TERM, entry.getKey()),
+                    Updates.addToSet(env.FIELD_URLS, newURL),
+                    options
+            ));
+        }
+
+        if(!updateModels.isEmpty()) wordsCollection.bulkWrite(updateModels);
+    }
+
+    public void updateStems(String url, HashMap<String,Stem> stems) {
+        List<WriteModel<Document>> updateModels = new ArrayList<>();
+        UpdateOptions options = new UpdateOptions().upsert(true);
+
+        for (Map.Entry<String,Stem> entry: stems.entrySet()) {
+            Document newURL = new Document(env.FIELD_URL, url)
+            .append(env.FIELD_STEM_COUNT, entry.getValue().count)
+            .append(env.FIELD_STEM_SCORE, entry.getValue().score);
+            updateModels.add(new UpdateOneModel<>(
+                    Filters.eq(env.FIELD_TERM, entry.getKey()),
+                    Updates.push(env.FIELD_URLS, newURL),
+                    options
+            ));
+        }
+
+        if(!updateModels.isEmpty()) stemsCollection.bulkWrite(updateModels);
     }
 
     /* Ranking helper functionalities */
@@ -109,14 +166,89 @@ public class Indexer {
     }
 
     public List<Webpage> searchWords(List<String>stems) {
+        /* find the stems */
+        Bson filter = Filters.in(env.FIELD_TERM, stems);
+        FindIterable<Document> stemDocuments = stemsCollection.find(filter);
+        Set<String> urls = new HashSet<>();
+
+        /* retreive urls */
+        for (Document wordDocument : stemDocuments) {
+            List<Document> urlsList = wordDocument.getList(env.FIELD_URLS, Document.class);
+            for (Document urlDocument : urlsList) {
+                String url = urlDocument.getString(env.FIELD_URL);
+                urls.add(url);
+            }
+        }
+
+        /* find webpages from db corresponding to urls */
         List<Document> results = webpagesCollection
-                                .find(Filters.in(env.FIELD_STEM_INDEX + "." + env.FIELD_TERM,stems))
+                                .find(Filters.in(env.FIELD_URL,urls))
                                 .into(new ArrayList<>());
         
         return convertToWebpages(results);
     }
 
+    public List<Webpage> searchWordsNotInverted(List<String>stems) {
+        List<Document> results = webpagesCollection
+        .find(Filters.in(env.FIELD_STEM_INDEX + "." + env.FIELD_TERM,stems))
+        .into(new ArrayList<>());
+
+        return convertToWebpages(results);
+    }
+
     public List<Webpage> searchPhrase(List<String>words) {
+        if(words.isEmpty()) return new ArrayList<>(); 
+
+        Bson filter = Filters.in(env.FIELD_TERM, words);
+
+        // Retrieve documents of all words in the search query, from the inverted index
+        FindIterable<Document> wordDocuments = wordsCollection.find(filter);
+
+        List<Set<String>> urlSets = new ArrayList<>();
+        for (Document wordDocument : wordDocuments) {
+            List<Document> urlsList = wordDocument.getList(env.FIELD_URLS, Document.class);
+            Set<String> urls = new HashSet<>();
+            for (Document urlDocument : urlsList) {
+                String url = urlDocument.getString(env.FIELD_URL);
+                urls.add(url);
+            }
+            urlSets.add(urls);
+        }
+
+        // Perform intersection to keep only the URLs that contain all query words
+        Set<String> intersection = new HashSet<>(urlSets.get(0));
+        for (int i = 1; i < urlSets.size(); i++) {
+            intersection.retainAll(urlSets.get(i));
+        }
+
+        // Finding the documents of the urls that survived the intersection
+        List<Webpage> webpages = new ArrayList<>();
+        for(String url : intersection) {
+            webpages.add(findByURL(url));
+        }
+
+        String firstWord = words.get(0);
+        List<Webpage> correctWebpages = new ArrayList<>();
+
+        // binary searching on positions, to get query correctly
+        for(Webpage webpage : webpages) {
+            HashMap<String,List<Integer>> termsPositions = webpage.terms;
+            boolean flag = true;
+            for(Integer pos : termsPositions.get(firstWord)) {
+                for (int i = 1; i < words.size(); i++) {
+                    if (Collections.binarySearch(termsPositions.get(words.get(i)), pos + i) < 0) {
+                        flag = false;
+                        break;
+                    }
+                }
+                if(flag == true) correctWebpages.add(webpage);
+            }
+        }
+
+        return correctWebpages;
+    }
+
+    public List<Webpage> searchPhraseNotInverted(List<String>words) {
         if(words.isEmpty()) return new ArrayList<>();
         List<Document> results = webpagesCollection
                                 .find(Filters.all(env.FIELD_TERM_INDEX + "." + env.FIELD_TERM,words))
@@ -144,13 +276,27 @@ public class Indexer {
         return correctWebpages;
     }
 
-    /* Utils */
+    /* Indexer Utils */
     public List<Webpage> convertToWebpages(List<Document> documents) {
         List<Webpage> webpages = new ArrayList<>();
         for (Document document : documents) {
             webpages.add(new Webpage(document));
         }
         return webpages;
+    }
+
+    /* Indexer Utils for Ranker */
+    public long documentsCount() {
+        return webpagesCollection.countDocuments();
+    }
+
+    public long documentCountForWord(String word) {
+        return webpagesCollection.countDocuments(Filters.eq(env.FIELD_STEM_INDEX+"."+env.FIELD_TERM, word));
+    }
+
+    public Webpage findByURL(String url) {
+        Document document = webpagesCollection.find(Filters.eq(env.FIELD_URL, url)).first();
+        return new Webpage(document);
     }
     
 }
