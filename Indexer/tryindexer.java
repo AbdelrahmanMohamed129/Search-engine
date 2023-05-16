@@ -30,8 +30,8 @@ public class tryindexer {
         // List<Webpage> webpages = myIndexer.searchPhrase(Arrays.asList(searchwords));
         long startTime = System.currentTimeMillis();
         // List<Webpage> webpages = myIndexer.searchPhrase(stemWords);
-        System.out.println(myIndexer.documentCountForStem("pepe"));
-        System.out.println(myIndexer.documentCountForStem("poop"));
+        System.out.println(myIndexer.documentCountForWord("damn"));
+        System.out.println(myIndexer.documentCountForStem("sad"));
         long endTime = System.currentTimeMillis();
         long elapsedTime = endTime - startTime;
         // for(Webpage webpage : webpages) {
