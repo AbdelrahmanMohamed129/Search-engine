@@ -31,7 +31,7 @@ public class QueryProcessor {
     private List<String> queryStems;
 
     private int totalResultsCount;
-    private List<ObjectId> rankedIds;
+    private List<String> rankedIds;
     private List<Webpage> results;
     private WebpageProcessor webProcessor;
 
@@ -52,7 +52,7 @@ public class QueryProcessor {
 
         Snippetly mSnippetly = new Snippetly();
 
-        for (ObjectId id : rankedIds) {
+        for (String id : rankedIds) {
             for (Webpage Webpage : results) {
                 if (!Webpage._id.equals(id)) continue;
 
@@ -143,9 +143,9 @@ public class QueryProcessor {
         List<Webpage> matchingResults;
 
         if (isPhraseSearch) {
-            matchingResults = mIndexer.searchByPhrase(queryWords, queryStems);
+            matchingResults = mIndexer.searchPhrase(queryWords);
         } else {
-            matchingResults = mIndexer.searchByWord(queryWords, queryStems);
+            matchingResults = mIndexer.searchWords(queryStems);
         }
 
         
@@ -169,7 +169,7 @@ public class QueryProcessor {
         //
         Ranker ranker = new Ranker(mIndexer, matchingResults, queryWords, queryStems);
         rankedIds = ranker.startRanking(paginationNo);
-        results = mIndexer.searchById(rankedIds, env.FIELDS_FOR_SEARCH_RESULTS);
+        results = mIndexer.searchIds(rankedIds, env.FIELDS_FOR_SEARCH_RESULTS);
 
         //
         now = System.nanoTime();

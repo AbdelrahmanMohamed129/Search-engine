@@ -90,7 +90,7 @@ public class PageRanker {
             graphNodes.get(WebpageURL).rank = pagesRank.get(pagesIDS.get(WebpageHostURL));
         }
         
-        mIndexer.updatePageRanks(graphNodes.values());
+        mIndexer.updateRank(graphNodes.values());
 
     }
 
@@ -159,9 +159,9 @@ public class PageRanker {
     }
 
     // Function that builds
-    public void getGraph() {
+    public void getGraph() throws URISyntaxException {
         // Get the web pages in the graph (all nodes)
-        graphNodes = mIndexer.getWebGraph();
+        graphNodes = mIndexer.getAllWebpagesForRanker();
 
         this.pagesCount = 0;
 
@@ -181,7 +181,7 @@ public class PageRanker {
             }
 
             // looping on the outlinks of the current WebpageNode
-            for (String to : WebpageNode.getValue().outLinks) {
+            for (String to : WebpageNode.getValue().outlinks) {
                 String toHostURL = getHostName(to);
 
                 if (graphNodes.containsKey(to)) { // Check if this out link page is currently indexed in the database.
@@ -206,7 +206,7 @@ public class PageRanker {
             String WebpageHostURL = getHostName(WebpageNode.getKey());
 
             // Loop over all links and write arcs
-            for (String to : WebpageNode.getValue().outLinks) {
+            for (String to : WebpageNode.getValue().outlinks) {
                 String toHostURL = getHostName(to);
 
                 if (graphNodes.containsKey(to)) { // Check if this out link page is currently indexed in the database.

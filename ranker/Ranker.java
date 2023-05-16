@@ -2,12 +2,12 @@ package ranker;
 
 import org.bson.types.ObjectId;
 import indexer.Indexer;
-// import indexer.StemInfo;
+import indexer.Stem;
 import indexer.Webpage;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.stream.Collectors;
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -44,7 +44,7 @@ public class Ranker {
     
     // Ranks the web pages based on the search query and returns a paginated results
 
-    public List<ObjectId> startRanking(int pageNumber) {
+    public List<String> startRanking(int pageNumber) throws URISyntaxException {
         // For each page calculate its TF-IDF score
         for (Webpage Webpage : mWebpages) {
             Webpage.rank = calculatePageScore(Webpage);
@@ -61,8 +61,10 @@ public class Ranker {
         while (cnt-- > 0) {
             ret.add(mWebpages.get(idx++)._id);
         }
-
-        return ret;
+        List<String> list = ret.stream()
+            .map(ObjectId::toString)
+            .collect(Collectors.toList());
+        return list;
     }
 
 
@@ -90,7 +92,7 @@ public class Ranker {
     // Calculates the given web page score rank based on the search query
     // The score is calculated as the sum of product of the web page TF and IDF
      
-    private double calculatePageScore(Webpage Webpage) {
+    private double calculatePageScore(Webpage Webpage) throws URISyntaxException {
         String hostURL = getHostName(Webpage.url);
         double levenshtein = 0.0;
         double isHostWebpage = (cleanURL(Webpage.url).equals(hostURL)) ? 1.0 : 0.0;
@@ -103,8 +105,8 @@ public class Ranker {
             String word = queryWords.get(i);
             String stem = queryStems.get(i);
 
-            List<Integer> positions = Webpage.wordPosMap.get(word);
-            StemInfo stemInfo = Webpage.stemMap.getOrDefault(stem, new StemInfo(0, 0));
+            List<Integer> positions = Webpage.terms.get(word);
+            Stem stemInfo = Webpage.stems.getOrDefault(stem, new Stem(0, 0));
 
             int wordCnt = (positions == null ? 0 : positions.size());
             int stemCnt = stemInfo.count;
@@ -112,7 +114,7 @@ public class Ranker {
 
             // Exact word
             if (wordCnt > 0) {
-                TF = wordCnt / (double) Webpage.wordsCount;
+                TF = wordCnt / (double) Webpage.totalWords;
                 IDF = Math.log((double) totalDocsCount / wordsDocsCount[i]);
 
                 score += TF * IDF;
@@ -122,7 +124,7 @@ public class Ranker {
 
             // Synonymous words
             if (stemCnt > 0) {
-                TF = stemCnt / (double) Webpage.wordsCount;
+                TF = stemCnt / (double) Webpage.totalWords;
                 IDF = Math.log((double) totalDocsCount / stemsDocsCount[i]);
 
                 score += (TF * IDF) * 0.5;
