@@ -1,4 +1,4 @@
-package indexer;
+package src.main.java.indexer;
 
 import com.mongodb.MongoClient;
 import com.mongodb.client.*;
@@ -8,8 +8,9 @@ import java.util.*;
 
 import org.bson.Document;
 import org.bson.conversions.Bson;
+import org.bson.types.ObjectId;
 
-import utils.env;
+import src.main.java.utils.env;;
 
 public class Indexer {
     private MongoCollection<Document> webpagesCollection;
@@ -163,7 +164,7 @@ public class Indexer {
 
     /* Searching functionalities */
 
-    public List<Webpage> searchIds(List<String>ids, List<String>fields) {
+    public List<Webpage> searchIds(List<ObjectId>ids, List<String>fields) {
         List<Document> results = webpagesCollection.find(Filters.in("_id", ids))
                                 .projection(Projections.include(fields))
                                 .into(new ArrayList<>());
