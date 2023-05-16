@@ -9,5 +9,6 @@
         "libraries/jsoup-1.16.1-sources.jar",
         "libraries/snowball.jar",
         "libraries/snowball-1.0.jar"
-    ]
+    ],
+    "java.compile.nullAnalysis.mode": "automatic"
 }
