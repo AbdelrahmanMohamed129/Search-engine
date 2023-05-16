@@ -16,6 +16,9 @@
 
 .heading{
     font-size: 10rem;
+    background: -webkit-linear-gradient(#36f5f1, #52016c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .searchBar{

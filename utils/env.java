@@ -28,7 +28,7 @@ public class env {
     public static final String FIELD_TERM_INDEX = "term-index";
     public static final String FIELD_TERM = "term";
     public static final String FIELD_TERM_POSITIONS = "positions";
-    public static final String FIELD_STEM_INDEX = "term-index";
+    public static final String FIELD_STEM_INDEX = "stem-index";
     public static final String FIELD_STEM_COUNT = "count";
     public static final String FIELD_STEM_SCORE = "score";
 
