@@ -278,8 +278,22 @@ public class Indexer {
         return webpagesCollection.countDocuments();
     }
 
+    public long documentCountForStem(String word) {
+        Document document = stemsCollection.find(Filters.eq(env.FIELD_TERM, word)).first();
+        if(document != null) {
+            List<Document> urls = document.get(env.FIELD_URLS, List.class);
+            return (urls != null) ? urls.size() : 0;
+        }
+        return 0;
+    }
+
     public long documentCountForWord(String word) {
-        return webpagesCollection.countDocuments(Filters.eq(env.FIELD_STEM_INDEX+"."+env.FIELD_TERM, word));
+        Document document = wordsCollection.find(Filters.eq(env.FIELD_TERM, word)).first();
+        if(document != null) {
+            List<Document> urls = document.get(env.FIELD_URLS, List.class);
+            return (urls != null) ? urls.size() : 0;
+        }
+        return 0;
     }
 
     public Webpage findByURL(String url) {

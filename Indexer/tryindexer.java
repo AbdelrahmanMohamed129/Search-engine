@@ -29,13 +29,15 @@ public class tryindexer {
         // List<Webpage> webpages = myIndexer.searchWords(Arrays.asList(searchwords));
         // List<Webpage> webpages = myIndexer.searchPhrase(Arrays.asList(searchwords));
         long startTime = System.currentTimeMillis();
-        List<Webpage> webpages = myIndexer.searchPhrase(stemWords);
+        // List<Webpage> webpages = myIndexer.searchPhrase(stemWords);
+        System.out.println(myIndexer.documentCountForStem("pepe"));
+        System.out.println(myIndexer.documentCountForStem("poop"));
         long endTime = System.currentTimeMillis();
         long elapsedTime = endTime - startTime;
-        for(Webpage webpage : webpages) {
-            System.out.println(webpage.url);
-        }
-        System.out.println(webpages.size());
+        // for(Webpage webpage : webpages) {
+        //     System.out.println(webpage.url);
+        // }
+        //System.out.println(webpages.size());
 
 
         // Print the elapsed time
