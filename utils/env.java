@@ -32,6 +32,13 @@ public class env {
     public static final String FIELD_STEM_COUNT = "count";
     public static final String FIELD_STEM_SCORE = "score";
 
+    public static final List<String> FIELDS_FOR_SEARCH_RESULTS = Arrays.asList(
+            FIELD_ID,
+            FIELD_URL,
+            FIELD_TITLE,
+            FIELD_PAGE_DATA
+    );
+    
     /* Stop Words */
     public static final String[] STOP_WORDS = {
         "a", "about", "above", "across", "after", "against", "amid", "among", "an", "and", "around", "as", "at", "before",

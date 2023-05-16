@@ -31,6 +31,8 @@ public class WebpageProcessor {
         webpage.pageData = pageData.toString().trim();
     }
 
+    public WebpageProcessor() {}
+
     private void traverseHTML(Document document) {
         document.body().traverse(new NodeVisitor() {
             public void head(Node node, int depth) {
