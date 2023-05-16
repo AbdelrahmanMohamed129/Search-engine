@@ -23,7 +23,8 @@ public class Integration {
             System.out.println("Choose one of the following functions");
             System.out.println("1. Crawl");
             System.out.println("2. Search");
-            System.out.println("3. Exit");
+            System.out.println("3. Start over");
+            System.out.println("4. Exit");
             
             choice = Integer.parseInt(bf.readLine());
             System.out.println("######################################################");
@@ -38,6 +39,9 @@ public class Integration {
                     startServer();
                     break;
                 case 3:
+                    startOver();
+                    break;
+                case 4:
                     System.out.println("GoodBye !!!");
                     break;
                 default:
@@ -75,6 +79,12 @@ public class Integration {
         PageRanker pageRanker = new PageRanker(indexer);
         pageRanker.startPageRanker();
         seedsFile.close();
+    }
+
+    private static void startOver() throws Exception {
+        System.out.println("Deleting all DB content");
+        Indexer.startOver();
+        
     }
 
     private static void startServer() {

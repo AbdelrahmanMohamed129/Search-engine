@@ -1,4 +1,4 @@
-package src.main.java.indexer;
+package indexer;
 
 import com.mongodb.MongoClient;
 import com.mongodb.client.*;
@@ -10,7 +10,7 @@ import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
 
-import src.main.java.utils.env;;
+import utils.env;
 
 public class Indexer {
     private MongoCollection<Document> webpagesCollection;

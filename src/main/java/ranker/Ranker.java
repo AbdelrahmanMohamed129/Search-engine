@@ -44,7 +44,7 @@ public class Ranker {
     
     // Ranks the web pages based on the search query and returns a paginated results
 
-    public List<String> startRanking(int pageNumber) throws URISyntaxException {
+    public List<ObjectId> startRanking(int pageNumber) throws URISyntaxException {
         // For each page calculate its TF-IDF score
         for (Webpage Webpage : mWebpages) {
             Webpage.rank = calculatePageScore(Webpage);
@@ -61,10 +61,10 @@ public class Ranker {
         while (cnt-- > 0) {
             ret.add(mWebpages.get(idx++)._id);
         }
-        List<String> list = ret.stream()
-            .map(ObjectId::toString)
-            .collect(Collectors.toList());
-        return list;
+        // List<String> list = ret.stream()
+        //     .map(ObjectId::toString)
+        //     .collect(Collectors.toList());
+        return ret;
     }
 
 

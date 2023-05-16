@@ -31,7 +31,7 @@ public class QueryProcessor {
     private List<String> queryStems;
 
     private int totalResultsCount;
-    private List<String> rankedIds;
+    private List<ObjectId> rankedIds;
     private List<Webpage> results;
     private WebpageProcessor webProcessor;
 
@@ -51,13 +51,18 @@ public class QueryProcessor {
         List<Document> pagesDocuments = new ArrayList<>();
 
         Snippetly mSnippetly = new Snippetly();
-
-        for (String id : rankedIds) {
+        System.out.println("HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        System.out.println(rankedIds);
+        System.out.println(results);
+        for (ObjectId id : rankedIds) {
             for (Webpage Webpage : results) {
                 if (!Webpage._id.equals(id)) continue;
 
                 String snippet = mSnippetly.extractWebPageSnippet(Webpage.pageData, originalQuery);
-
+                System.out.println("HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                System.out.println(Webpage.title);
+                System.out.println(Webpage.url);
+                System.out.println(snippet);
                 Document doc = new Document()
                         .append("title", Webpage.title)
                         .append("url", Webpage.url)
@@ -70,7 +75,8 @@ public class QueryProcessor {
         }
 
         int pagesCount = ((totalResultsCount + 10 - 1) / 10);
-
+        
+        System.out.println(pagesDocuments);
         Document paginationDocument = new Document()
                 .append("pages_count", pagesCount)
                 .append("current_page", paginationNo);
@@ -169,6 +175,8 @@ public class QueryProcessor {
         //
         Ranker ranker = new Ranker(mIndexer, matchingResults, queryWords, queryStems);
         rankedIds = ranker.startRanking(paginationNo);
+        System.out.println("Hereee 2.0 !!!!!!!!!!!!!");
+        System.out.println(rankedIds);
         results = mIndexer.searchIds(rankedIds, env.FIELDS_FOR_SEARCH_RESULTS);
 
         //
