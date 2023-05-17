@@ -46,7 +46,7 @@ public class env {
     
     /* Stop Words */
     public static final String[] STOP_WORDS = {
-        "a", "about", "above", "across", "after", "against", "amid", "among", "an", "and", "around", "as", "at", "before",
+        "a", "about", "above", "across", "after", "against", "amid", "among", "an", "are", "and", "around", "as", "at", "before",
         "behind", "below", "beneath", "beside", "between", "beyond", "but", "by", "despite", "down", "during", "except",
         "following", "for", "from", "in", "inside", "into", "like", "near", "not", "of", "off", "on", "onto", "or", "out",
         "outside", "over", "past", "regarding", "since", "than", "through", "throughout", "till", "to", "toward", "under",
