@@ -1,11 +1,16 @@
 package crawler;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.SocketTimeoutException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -77,75 +82,81 @@ public class WebCrawler {
                     uri_url = new URI(url).normalize();
                     url = uri_url.toString();
                 } catch (URISyntaxException e) {
-                    // TODO Auto-generated catch block
                     System.err.println("Error normalizing main URL: " + url);
                 }
-                if (!visitedUrls.contains(url)) {
-                    try {
-                        Document doc = Jsoup.connect(url).get();
-                        Elements links = doc.select("a[href]");
+                final String check = url;
+                try {
+                    if (!visitedUrls.contains(url) && !Files.lines(Paths.get("links.txt")).anyMatch(line -> line.contains(check))) {
+                        try {
+                            Document doc = Jsoup.connect(url).get();
+                            Elements links = doc.select("a[href]");
 
-                        ArrayList<String> linksArray = new ArrayList<>();
-                        for (Element link : doc.select("a[href]")) {
-                            String nextUrl = link.attr("href");
-                            try {
-                                URI uri = new URI(nextUrl).normalize();
-                                nextUrl = uri.toString();
-                                linksArray.add(nextUrl);
-                            } catch (URISyntaxException e) {
-                                System.err.println("Error normalizing outlink URL: " + nextUrl);
-                            }
-                        }
-
-
-                        synchronized (lock) {
-                            if (!visitedUrls.contains(url) && currentPageCount < maxPages){
-                            // send to farah
-                                if(index.startIndexingURL(url,doc,linksArray)){
-                                    visitedUrls.add(url);
-                                    currentPageCount = visitedUrls.size();
-                                    System.out.println("Visited: " + url+ "     Number: " + visitedUrls.size());  
-                                } 
-                            }
-                        }
-                        
-                        int count = 0;
-                        for (Element link : links) {
-                            String nextUrl = link.attr("href");
-
-                            // Normalize the URL
-                            try {
-                                URI uri = new URI(nextUrl).normalize();
-                                nextUrl = uri.toString();
-                            } catch (URISyntaxException e) {
-                                System.err.println("Error normalizing URL: " + nextUrl);
-                                continue;
-                            }
-
-                            synchronized (this) {
-                                if (isValidUrl(nextUrl)) {
-                                if (count >= 5) {
-                                    break;
+                            ArrayList<String> linksArray = new ArrayList<>();
+                            for (Element link : doc.select("a[href]")) {
+                                String nextUrl = link.attr("href");
+                                try {
+                                    URI uri = new URI(nextUrl).normalize();
+                                    nextUrl = uri.toString();
+                                    linksArray.add(nextUrl);
+                                } catch (URISyntaxException e) {
+                                    System.err.println("Error normalizing outlink URL: " + nextUrl);
                                 }
-                                urlsToVisit.add(nextUrl);
-                                count++;
+                            }
+
+
+                            synchronized (lock) {
+                                if (!visitedUrls.contains(url) && currentPageCount < maxPages){
+                                // send to farah
+                                    if(index.startIndexingURL(url,doc,linksArray)){
+                                        visitedUrls.add(url);
+                                        currentPageCount = visitedUrls.size();
+                                        System.out.println("Visited: " + url+ "     Number: " + visitedUrls.size());  
+                                        String StringUrl = url.toString();
+                                        writeLinks(StringUrl);
+                                    } 
                                 }
                             }
                             
-                        }
+                            int count = 0;
+                            for (Element link : links) {
+                                String nextUrl = link.attr("href");
 
-                    } catch (HttpStatusException e) {
-                        // Ignore HTTP 404 errors and continue crawling
-                        System.err.println("Error fetching URL: " + url);
-                    } catch (SSLHandshakeException e) {
-                        // Ignore SSL handshake errors and continue crawling
-                        System.err.println("Error in SSL handshake with URL: " + url);
-                    } catch (SocketTimeoutException e) {
-                        // Ignore socket timeout errors and continue crawling
-                        System.err.println("Timeout fetching URL: " + url);
-                    } catch (IOException e) {
-                        System.err.println("Error connecting to URL: " + url);
-                    }   
+                                // Normalize the URL
+                                try {
+                                    URI uri = new URI(nextUrl).normalize();
+                                    nextUrl = uri.toString();
+                                } catch (URISyntaxException e) {
+                                    System.err.println("Error normalizing URL: " + nextUrl);
+                                    continue;
+                                }
+
+                                synchronized (this) {
+                                    if (isValidUrl(nextUrl)) {
+                                    if (count >= 5) {
+                                        break;
+                                    }
+                                    urlsToVisit.add(nextUrl);
+                                    count++;
+                                    }
+                                }
+                                
+                            }
+
+                        } catch (HttpStatusException e) {
+                            // Ignore HTTP 404 errors and continue crawling
+                            System.err.println("Error fetching URL: " + url);
+                        } catch (SSLHandshakeException e) {
+                            // Ignore SSL handshake errors and continue crawling
+                            System.err.println("Error in SSL handshake with URL: " + url);
+                        } catch (SocketTimeoutException e) {
+                            // Ignore socket timeout errors and continue crawling
+                            System.err.println("Timeout fetching URL: " + url);
+                        } catch (IOException e) {
+                            System.err.println("Error connecting to URL: " + url);
+                        }   
+                    }
+                } catch (IOException e) {
+                  
                 }
             }
         }
@@ -153,7 +164,7 @@ public class WebCrawler {
         
         private boolean isValidUrl(String url) {
              // Implement logic to check if url is valid for crawling here
-        if (!url.startsWith("http://") && !url.startsWith("https://")) {
+        if (!url.startsWith("http://www.") && !url.startsWith("https://www.")) {
             return false;
         }
 
@@ -171,6 +182,22 @@ public class WebCrawler {
         }
     
     }
+
+    public void writeLinks(String Url) {
+		PrintWriter PrintWriter = null;
+		try {
+			FileWriter writer = new FileWriter("links.txt", true);
+			BufferedWriter bufferwriter = new BufferedWriter(writer);
+			PrintWriter = new PrintWriter(bufferwriter);
+			PrintWriter.println(Url);
+			PrintWriter.flush();
+		} catch (IOException e) {
+		} finally {
+			if (PrintWriter != null) {
+				PrintWriter.close();
+			}
+		}
+	}	
     
     public static void main(String[] args) throws IOException {
         ArrayList<String> seedUrls = new ArrayList<>();
