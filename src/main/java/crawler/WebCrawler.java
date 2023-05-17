@@ -1,14 +1,17 @@
 package crawler;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.SocketTimeoutException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -165,24 +168,51 @@ public class WebCrawler {
 
         
         private boolean isValidUrl(String url) {
-             // Implement logic to check if url is valid for crawling here
-        if (!url.startsWith("http://www.") && !url.startsWith("https://www.")) {
-            return false;
-        }
-
-        // Normalize the URL
-        try {
-            URI uri = new URI(url).normalize();
-            String normalizedUrl = uri.toString();
-
-            // Check if the normalized URL is referring to the same page using a compact string
-            String compactString = Jsoup.parse(normalizedUrl).body().text();
-            return !visitedUrls.contains(compactString);
-        } catch (URISyntaxException e) {
-            return false;
+            // Implement logic to check if url is valid for crawling here
+            if (!url.startsWith("http://www.") && !url.startsWith("https://www.")) {
+                return false;
+            }
+        
+            // Normalize the URL
+            try {
+                URI uri = new URI(url).normalize();
+                String normalizedUrl = uri.toString();
+        
+                // Check if the normalized URL is referring to the same page using a compact string
+                String compactString = Jsoup.parse(normalizedUrl).body().text();
+                if (visitedUrls.contains(compactString)) {
+                    return false;
+                }
+        
+                // Check if the website allows crawling based on robots.txt file
+                String domain = uri.getHost();
+                URL robotsUrl = new URL("http://" + domain + "/robots.txt");
+                BufferedReader reader = new BufferedReader(new InputStreamReader(robotsUrl.openStream()));
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    if (line.startsWith("User-agent: *")) {
+                        // Check if the website disallows crawling for all user agents
+                        while ((line = reader.readLine()) != null) {
+                            if (line.startsWith("Disallow: ")) {
+                                String disallowedPath = line.substring("Disallow: ".length());
+                                if (uri.getPath().startsWith(disallowedPath)) {
+                                    return false;
+                                }
+                            } else {
+                                // Stop checking if we encounter a non-disallow line
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                }
+        
+                return true;
+            } catch (URISyntaxException | IOException e) {
+                return false;
+            }
         }
     
-    }
 
     public void writeLinks(String Url) {
 		PrintWriter PrintWriter = null;
@@ -220,9 +250,9 @@ public class WebCrawler {
 
         Indexer newIndexer = new Indexer();
 
-        newIndexer.startOver();
+        Indexer.startOver();
 
-        WebCrawler crawler = new WebCrawler(seedUrls, 10, 10, newIndexer);
+        WebCrawler crawler = new WebCrawler(seedUrls, 50, 10, newIndexer);
         crawler.crawl();
 
         // End recording the time
