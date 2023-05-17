@@ -76,6 +76,7 @@ public class Indexer {
 
     /* Indexing functionalities */
     public boolean startIndexingURL(String url, org.jsoup.nodes.Document document, ArrayList<String>outlinks) {
+        System.out.println("Entered indexer..............");
         WebpageProcessor processor = new WebpageProcessor(url, document);
         Webpage webpage = processor.webpage;
 
@@ -88,7 +89,7 @@ public class Indexer {
         webpage.outlinks = outlinks;
         addWebpageToDB(webpage);
         System.out.println("Indexing: " + url + ". Success!");
-
+        System.out.println("Exited indexer..............");
         return true;
     }
 
