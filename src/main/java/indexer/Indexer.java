@@ -240,8 +240,8 @@ public class Indexer {
                         break;
                     }
                 }
-                if(flag == true) correctWebpages.add(webpage);
             }
+            if(flag == true) correctWebpages.add(webpage);
         }
 
         return correctWebpages;
