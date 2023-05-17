@@ -75,7 +75,7 @@ public class WebCrawler {
     private class CrawlerWorker implements Runnable {
         @Override
         public void run() {
-            while (!urlsToVisit.isEmpty() && currentPageCount < maxPages) {
+            while (!urlsToVisit.isEmpty() && currentPageCount < maxPages ) {
                 String url = urlsToVisit.poll();
                 if (url == null) {
                     break;
@@ -88,8 +88,7 @@ public class WebCrawler {
                     System.err.println("Error normalizing main URL: " + url);
                 }
                 final String check = url;
-                    try {
-                        if (!visitedUrls.contains(url) && currentPageCount < maxPages && !Files.lines(Paths.get("links.txt")).anyMatch(line -> line.contains(check))) {
+                        if (!visitedUrls.contains(url) && currentPageCount < maxPages) {
                             try {
                                 Document doc = Jsoup.connect(url).timeout(5000).get();
                                 Elements links = doc.select("a[href]");
@@ -115,7 +114,7 @@ public class WebCrawler {
                                             currentPageCount = visitedUrls.size();
                                             System.out.println("Visited: " + url+ "     Number: " + visitedUrls.size());  
                                             String StringUrl = url.toString();
-                                            writeLinks(StringUrl);
+                                            //writeLinks(StringUrl);
                                         } 
                                     }
                                 }
@@ -126,8 +125,10 @@ public class WebCrawler {
 
                                     // Normalize the URL
                                     try {
-                                        URI uri = new URI(nextUrl).normalize();
-                                        nextUrl = uri.toString();
+                                        if (isValidUrl(nextUrl)) {
+                                            URI uri = new URI(nextUrl).normalize();
+                                            nextUrl = uri.toString();
+                                        }
                                     } catch (URISyntaxException e) {
                                         System.err.println("Error normalizing URL: " + nextUrl);
                                         continue;
@@ -158,12 +159,8 @@ public class WebCrawler {
                                 System.err.println("Error connecting to URL: " + url);
                             }   
                         }
-                    } catch (IOException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
                     }
                 }
-            }
         }
 
         

@@ -146,7 +146,7 @@ async function getSuggestion(query) {
             <div className={classes.search}>
             <input className={classes.searchBar} list="searchlist" id="search" type="search" onKeyDown={handleClick} onChange={handleChange} value={queryy} />
             <datalist id="searchlist" className={classes.suggestion} >
-                  {suggested.map((sug) => {return <option value={sug} />})}
+                  {suggested?.map((sug) => {return <option value={sug} />})}
         </datalist>
 
             <i className={classes.fa}  >
