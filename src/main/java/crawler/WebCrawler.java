@@ -251,7 +251,7 @@ public class WebCrawler {
 
         Indexer newIndexer = new Indexer();
 
-        Indexer.startOver();
+       // Indexer.startOver();
 
         WebCrawler crawler = new WebCrawler(seedUrls, 50, 10, newIndexer);
         crawler.crawl();

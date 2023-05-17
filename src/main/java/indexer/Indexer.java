@@ -93,7 +93,14 @@ public class Indexer {
     }
 
     public void addWebpageToDB(Webpage webpage) {
-        webpagesCollection.insertOne(webpage.convertToDocument());
+
+        String url = webpage.url;
+        Document document = webpage.convertToDocument();
+
+        Bson filter = Filters.eq("url", url);
+        FindOneAndReplaceOptions  options = new FindOneAndReplaceOptions ().upsert(true);
+        webpagesCollection.findOneAndReplace(filter, document, options);
+        //webpagesCollection.insertOne(webpage.convertToDocument());
         /* update words */
         updateWords(webpage.url, webpage.terms);
         /* updates stems */
