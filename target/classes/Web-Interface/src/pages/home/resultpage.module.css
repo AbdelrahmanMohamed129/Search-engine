@@ -28,6 +28,7 @@
 }
 
 .search{
+    min-width: 25rem;
     width: 25vw;
     position: relative;
 }
@@ -198,6 +199,19 @@
 .foolingBtn{
     width: 0;
     height: 0;   
+}
+
+.up{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.up:hover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: white;
 }
 
 /* The end of alice carousel css */
