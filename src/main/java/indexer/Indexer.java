@@ -55,10 +55,9 @@ public class Indexer {
         stemsCollection.createIndex(Indexes.ascending(env.FIELD_TERM), indexOptions);
         stemsCollection.createIndex(Indexes.ascending(env.FIELD_URLS + "." + env.FIELD_URL));
         /* Creating the suggestions collection */
-        MongoCollection<Document> suggestCollection = myDatabase.getCollection(env.COLLECTION_STEMS);
+        MongoCollection<Document> suggestCollection = myDatabase.getCollection(env.COLLECTION_SUGGESTIONS);
         suggestCollection.createIndex(Indexes.ascending(env.FIELD_SUGGEST_QUERY), indexOptions);
-        suggestCollection.createIndex(Indexes.ascending(env.FIELD_SUGGEST_QUERY));
-        //mongoConnection.close();
+        // //mongoConnection.close();
     }
 
     public Indexer() {

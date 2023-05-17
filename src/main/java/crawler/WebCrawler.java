@@ -194,7 +194,7 @@ public class WebCrawler {
 
         newIndexer.startOver();
 
-        WebCrawler crawler = new WebCrawler(seedUrls, 500, 10, newIndexer);
+        WebCrawler crawler = new WebCrawler(seedUrls, 50, 10, newIndexer);
         crawler.crawl();
 
         // End recording the time

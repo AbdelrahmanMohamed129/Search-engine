@@ -16,32 +16,37 @@ import org.tartarus.snowball.ext.englishStemmer;
 
 public class tryindexer {
     public static void main(String[] args) throws IOException  {
-        // Document doc = Jsoup.connect("http://web.simmons.edu/~grovesd/comm244/notes/week3/html-test-page.html").get();
-        // WebpageProcessor me  = new WebpageProcessor("http://web.simmons.edu/~grovesd/comm244/notes/week3/html-test-page.html",doc);
-        // Webpage me1 = me.webpage;
+        String url = "http://www.brainjar.com/java/host/test.html";
+        Document doc = Jsoup.connect(url).get();
+        WebpageProcessor me  = new WebpageProcessor("http://web.simmons.edu/~grovesd/comm244/notes/week3/html-test-page.html",doc);
+        Webpage me1 = me.webpage;
+
+
 
         Indexer myIndexer = new Indexer();
+        Indexer.startOver();
+        myIndexer.startIndexingURL(url, doc, new ArrayList<>());
         String[] searchwords = {"i","am"};
         List<String> stemWords = new ArrayList<>();
         for(String word : searchwords) {
             stemWords.add(getStem(word));
         }
-        // List<Webpage> webpages = myIndexer.searchWords(Arrays.asList(searchwords));
-        // List<Webpage> webpages = myIndexer.searchPhrase(Arrays.asList(searchwords));
-        long startTime = System.currentTimeMillis();
-        // List<Webpage> webpages = myIndexer.searchPhrase(stemWords);
-        System.out.println(myIndexer.documentCountForWord("damn"));
-        System.out.println(myIndexer.documentCountForStem("sad"));
-        long endTime = System.currentTimeMillis();
-        long elapsedTime = endTime - startTime;
-        // for(Webpage webpage : webpages) {
-        //     System.out.println(webpage.url);
-        // }
-        //System.out.println(webpages.size());
+        // // List<Webpage> webpages = myIndexer.searchWords(Arrays.asList(searchwords));
+        // // List<Webpage> webpages = myIndexer.searchPhrase(Arrays.asList(searchwords));
+        // long startTime = System.currentTimeMillis();
+        // // List<Webpage> webpages = myIndexer.searchPhrase(stemWords);
+        // System.out.println(myIndexer.documentCountForWord("damn"));
+        // System.out.println(myIndexer.documentCountForStem("sad"));
+        // long endTime = System.currentTimeMillis();
+        // long elapsedTime = endTime - startTime;
+        // // for(Webpage webpage : webpages) {
+        // //     System.out.println(webpage.url);
+        // // }
+        // //System.out.println(webpages.size());
 
 
         // Print the elapsed time
-        System.out.println("Elapsed time: " + 1.0*elapsedTime/60000 + " minutes");
+        //System.out.println("Elapsed time: " + 1.0*elapsedTime/60000 + " minutes");
     }
 
     public static String getStem(String word) {
