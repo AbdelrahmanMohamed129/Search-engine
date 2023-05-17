@@ -57,7 +57,7 @@ public class Indexer {
         /* Creating the suggestions collection */
         MongoCollection<Document> suggestCollection = myDatabase.getCollection(env.COLLECTION_SUGGESTIONS);
         suggestCollection.createIndex(Indexes.ascending(env.FIELD_SUGGEST_QUERY), indexOptions);
-        // //mongoConnection.close();
+        //mongoConnection.close();
     }
 
     public Indexer() {
@@ -81,7 +81,7 @@ public class Indexer {
 
         /* If we could only process less than 75% of the document, then discard it */
         if(webpage.pageData.isEmpty() || 1.0*processor.processedDataSize/webpage.pageData.length() < 0.75) {
-            System.out.println("Indexing: " + url + ". Fail :/");
+            System.out.println("Indexing: " + url + ". Fail :/. Webpage is not in English.");
             return false;
         }
 

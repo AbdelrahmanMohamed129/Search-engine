@@ -85,78 +85,80 @@ public class WebCrawler {
                     System.err.println("Error normalizing main URL: " + url);
                 }
                 final String check = url;
-                try {
-                    if (!visitedUrls.contains(url) && !Files.lines(Paths.get("links.txt")).anyMatch(line -> line.contains(check))) {
-                        try {
-                            Document doc = Jsoup.connect(url).get();
-                            Elements links = doc.select("a[href]");
+                    try {
+                        if (!visitedUrls.contains(url) && currentPageCount < maxPages && !Files.lines(Paths.get("links.txt")).anyMatch(line -> line.contains(check))) {
+                            try {
+                                Document doc = Jsoup.connect(url).get();
+                                Elements links = doc.select("a[href]");
 
-                            ArrayList<String> linksArray = new ArrayList<>();
-                            for (Element link : doc.select("a[href]")) {
-                                String nextUrl = link.attr("href");
-                                try {
-                                    URI uri = new URI(nextUrl).normalize();
-                                    nextUrl = uri.toString();
-                                    linksArray.add(nextUrl);
-                                } catch (URISyntaxException e) {
-                                    System.err.println("Error normalizing outlink URL: " + nextUrl);
-                                }
-                            }
-
-
-                            synchronized (lock) {
-                                if (!visitedUrls.contains(url) && currentPageCount < maxPages){
-                                // send to farah
-                                    if(index.startIndexingURL(url,doc,linksArray)){
-                                        visitedUrls.add(url);
-                                        currentPageCount = visitedUrls.size();
-                                        System.out.println("Visited: " + url+ "     Number: " + visitedUrls.size());  
-                                        String StringUrl = url.toString();
-                                        writeLinks(StringUrl);
-                                    } 
-                                }
-                            }
-                            
-                            int count = 0;
-                            for (Element link : links) {
-                                String nextUrl = link.attr("href");
-
-                                // Normalize the URL
-                                try {
-                                    URI uri = new URI(nextUrl).normalize();
-                                    nextUrl = uri.toString();
-                                } catch (URISyntaxException e) {
-                                    System.err.println("Error normalizing URL: " + nextUrl);
-                                    continue;
-                                }
-
-                                synchronized (this) {
-                                    if (isValidUrl(nextUrl)) {
-                                    if (count >= 5) {
-                                        break;
+                                ArrayList<String> linksArray = new ArrayList<>();
+                                for (Element link : doc.select("a[href]")) {
+                                    String nextUrl = link.attr("href");
+                                    try {
+                                        URI uri = new URI(nextUrl).normalize();
+                                        nextUrl = uri.toString();
+                                        linksArray.add(nextUrl);
+                                    } catch (URISyntaxException e) {
+                                        System.err.println("Error normalizing outlink URL: " + nextUrl);
                                     }
-                                    urlsToVisit.add(nextUrl);
-                                    count++;
+                                }
+
+
+                                synchronized (lock) {
+                                    if (!visitedUrls.contains(url) && currentPageCount < maxPages){
+                                    // send to farah
+                                        if(index.startIndexingURL(url,doc,linksArray)){
+                                            visitedUrls.add(url);
+                                            currentPageCount = visitedUrls.size();
+                                            System.out.println("Visited: " + url+ "     Number: " + visitedUrls.size());  
+                                            String StringUrl = url.toString();
+                                            writeLinks(StringUrl);
+                                        } 
                                     }
                                 }
                                 
-                            }
+                                int count = 0;
+                                for (Element link : links) {
+                                    String nextUrl = link.attr("href");
 
-                        } catch (HttpStatusException e) {
-                            // Ignore HTTP 404 errors and continue crawling
-                            System.err.println("Error fetching URL: " + url);
-                        } catch (SSLHandshakeException e) {
-                            // Ignore SSL handshake errors and continue crawling
-                            System.err.println("Error in SSL handshake with URL: " + url);
-                        } catch (SocketTimeoutException e) {
-                            // Ignore socket timeout errors and continue crawling
-                            System.err.println("Timeout fetching URL: " + url);
-                        } catch (IOException e) {
-                            System.err.println("Error connecting to URL: " + url);
-                        }   
+                                    // Normalize the URL
+                                    try {
+                                        URI uri = new URI(nextUrl).normalize();
+                                        nextUrl = uri.toString();
+                                    } catch (URISyntaxException e) {
+                                        System.err.println("Error normalizing URL: " + nextUrl);
+                                        continue;
+                                    }
+
+                                    synchronized (this) {
+                                        if (isValidUrl(nextUrl)) {
+                                        if (count >= 5) {
+                                            break;
+                                        }
+                                        urlsToVisit.add(nextUrl);
+                                        count++;
+                                        }
+                                    }
+                                    
+                                }
+
+                            } catch (HttpStatusException e) {
+                                // Ignore HTTP 404 errors and continue crawling
+                                System.err.println("Error fetching URL: " + url);
+                            } catch (SSLHandshakeException e) {
+                                // Ignore SSL handshake errors and continue crawling
+                                System.err.println("Error in SSL handshake with URL: " + url);
+                            } catch (SocketTimeoutException e) {
+                                // Ignore socket timeout errors and continue crawling
+                                System.err.println("Timeout fetching URL: " + url);
+                            } catch (IOException e) {
+                                System.err.println("Error connecting to URL: " + url);
+                            }   
+                        }
+                    } catch (IOException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
                     }
-                } catch (IOException e) {
-                  
                 }
             }
         }
@@ -178,7 +180,6 @@ public class WebCrawler {
             return !visitedUrls.contains(compactString);
         } catch (URISyntaxException e) {
             return false;
-        }
         }
     
     }
@@ -221,7 +222,7 @@ public class WebCrawler {
 
         newIndexer.startOver();
 
-        WebCrawler crawler = new WebCrawler(seedUrls, 50, 10, newIndexer);
+        WebCrawler crawler = new WebCrawler(seedUrls, 10, 10, newIndexer);
         crawler.crawl();
 
         // End recording the time
