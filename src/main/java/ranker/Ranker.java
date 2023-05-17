@@ -44,7 +44,7 @@ public class Ranker {
     
     // Ranks the web pages based on the search query and returns a paginated results
 
-    public List<ObjectId> startRanking(int pageNumber) throws URISyntaxException {
+    public void startRanking() throws URISyntaxException {
         // For each page calculate its TF-IDF score
         for (Webpage Webpage : mWebpages) {
             Webpage.rank = calculatePageScore(Webpage);
@@ -52,6 +52,12 @@ public class Ranker {
 
         // Sort Webpages
         mWebpages.sort((p1, p2) -> Double.compare(p2.rank, p1.rank));
+        int endIndex = Math.min(150, mWebpages.size());
+        mWebpages = mWebpages.subList(0, endIndex);
+        System.out.println("Number of matching results: "+mWebpages.size());
+    }
+
+    public List<ObjectId> paginateResults(int pageNumber) throws URISyntaxException {
 
         List<ObjectId> ret = new ArrayList<>();
 

@@ -17,6 +17,7 @@ import java.util.Set;
 
 import org.tartarus.snowball.SnowballStemmer;
 import org.tartarus.snowball.ext.englishStemmer;
+import org.tukaani.xz.rangecoder.RangeEncoder;
 
 public class QueryProcessor {
 
@@ -174,7 +175,8 @@ public class QueryProcessor {
         // Rank matching results
         //
         Ranker ranker = new Ranker(mIndexer, matchingResults, queryWords, queryStems);
-        rankedIds = ranker.startRanking(paginationNo);
+        ranker.startRanking();
+        rankedIds = ranker.paginateResults(paginationNo);
         // System.out.println("Hereee 2.0 !!!!!!!!!!!!!");
         // System.out.println(rankedIds);
         results = mIndexer.searchIds(rankedIds, env.FIELDS_FOR_SEARCH_RESULTS);
