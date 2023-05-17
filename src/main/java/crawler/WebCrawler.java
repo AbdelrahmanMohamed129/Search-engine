@@ -91,7 +91,7 @@ public class WebCrawler {
                     try {
                         if (!visitedUrls.contains(url) && currentPageCount < maxPages && !Files.lines(Paths.get("links.txt")).anyMatch(line -> line.contains(check))) {
                             try {
-                                Document doc = Jsoup.connect(url).get();
+                                Document doc = Jsoup.connect(url).timeout(5000).get();
                                 Elements links = doc.select("a[href]");
 
                                 ArrayList<String> linksArray = new ArrayList<>();

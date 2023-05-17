@@ -4,6 +4,10 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import ResultedBlock from "../../components/ResultedBlock";
 import ButtonPage from "../../components/ButtonPage";
 import axios from "axios";
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 
 const ResultPage = () => {
@@ -14,6 +18,7 @@ const ResultPage = () => {
   const [found, setFound] = React.useState(true)
   const [suggested, setSuggested] = React.useState([])
   const [time,setTime] =React.useState(0)
+  const [btns,setBtns] = React.useState([])
   const handleClick = (e) => {
     if (e.key === "Enter") {
       setQuery(e.target.value)
@@ -106,14 +111,31 @@ async function getSuggestion(query) {
 
   function renderButtons() {
     // map on number of pages and render the ButtonPage component
-    var buttons = []
+    // var buttons = []
+    // for (var i = 1; i <= numberOfPages; i++) {
+    //   buttons.push(<ButtonPage key={i} num={i} setter={setPage} active={page===i}/>)
+    // }
+    // return buttons
+
+    const buttonsList = []
     for (var i = 1; i <= numberOfPages; i++) {
-      buttons.push(<ButtonPage key={i} num={i} setter={setPage} active={page===i}/>)
-    }
-    return buttons
+      // put button data in an array
+      const button = {
+        key: i,
+        num: i,
+        setter: setPage,
+        active: page===i
+        }
+      buttonsList.push(button)
+      }
 
-  }
+      setBtns(buttonsList)
+      } 
 
+  useEffect(() => {
+    renderButtons()
+  }, [numberOfPages]);
+  
 
   return ( 
     
@@ -139,7 +161,33 @@ async function getSuggestion(query) {
         {/* map on buttons using index for pagination*/}
         <div className={classes.pagination}>
           {found?
-            renderButtons():
+          (
+            <AliceCarousel
+            className={classes.carousel}
+            mouseTracking items={
+              btns.map((btn,index) => {
+                return <ButtonPage key={btn.key} num={btn.num} setter={btn.setter} active={page===index+1}/>
+              })   
+            } 
+            responsive={{
+              0: {
+                  items: 1,
+                  itemsFit:'fill'
+              },
+              800: {
+                items: 6,
+                itemsFit: 'fill',
+            },
+              1200: {
+                  items: 10,
+                  itemsFit: 'fill',
+              }
+            }}
+            renderDotsItem={(e) => {return <div className={e.isActive?classes.carouselIndexBtnActive:classes.carouselIndexBtn}></div>}} 
+            renderPrevButton={(e)=>{return <ArrowBackIosNewIcon style={{fontSize:"20"}} className={e.isDisabled?classes.carouseLBtnDis:classes.carouseLBtn}/>}}
+            renderNextButton={(e)=>{return <ArrowForwardIosIcon style={{fontSize:"20"}} className={e.isDisabled?classes.carouselRtnDis:classes.carouselRBtn}/>}}
+          />
+          ):
             <h1 className={classes.notFound}>Not Found!</h1>
           }
           
