@@ -61,12 +61,16 @@ public class WebCrawler {
     }
 
     public void crawl() {
+        long startTime = System.currentTimeMillis();
         for (int i = 0; i < numThreads; i++) {
             executor.execute(new CrawlerWorker());
         }
         executor.shutdown();
         try {
             executor.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
+            long endTime = System.currentTimeMillis();
+            long elapsedTime = endTime - startTime;
+            System.out.println("Crawling elapsed time: " + 1.0*elapsedTime/60000 + " minutes");
         } catch (InterruptedException e) {
             System.err.println("Interrupted while waiting for threads to finish");
         }
@@ -75,7 +79,7 @@ public class WebCrawler {
     private class CrawlerWorker implements Runnable {
         @Override
         public void run() {
-            while (!urlsToVisit.isEmpty() && currentPageCount < maxPages ) {
+            while (currentPageCount < maxPages ) {
                 String url = urlsToVisit.poll();
                 if (url == null) {
                     break;
@@ -90,7 +94,7 @@ public class WebCrawler {
                 final String check = url;
                         if (!visitedUrls.contains(url) && currentPageCount < maxPages) {
                             try {
-                                Document doc = Jsoup.connect(url).get();
+                                Document doc = Jsoup.connect(url).timeout(5000).get();
                                 Elements links = doc.select("a[href]");
 
                                 ArrayList<String> linksArray = new ArrayList<>();
