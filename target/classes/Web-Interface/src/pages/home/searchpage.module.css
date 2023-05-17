@@ -16,19 +16,20 @@
 
 .heading{
     font-size: 10rem;
-    background: -webkit-linear-gradient(#36f5f1, #52016c);
+    background-color: #eeeeee;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .searchBar{
     width: 100%;
-    border: solid 2px grey;
+    border: solid 2px #E7F6F2;
     height: 3rem;
     border-radius: 3rem;
     padding: 1rem;
     font-size: 2rem;
     text-indent: 5rem;
+    color: #E7F6F2;
 }
 
 .searchBar:hover{
@@ -37,6 +38,12 @@
     transition: all 0.2s;
 }
 
+.searchBar:focus{
+    background-color: rgb(239, 238, 238);
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #2C3333;
+}
 .fa{
     position: absolute;
     top: 1rem;

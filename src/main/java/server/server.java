@@ -5,6 +5,7 @@ import indexer.WebpageProcessor;
 import spark.Request;
 import spark.Response;
 import utils.utilFunctions;
+import org.bson.Document;
 
 import java.util.List;
 import static spark.Spark.*;
@@ -54,7 +55,11 @@ public class server {
             // Get suggestions from the indexer
             List<String> suggestions = sIndexer.getSuggestions(queryString);
 
-            return suggestions.toString();
+            Document response = new Document()
+                .append("suggestion", suggestions);
+
+            return response.toJson();
+            // return suggestions.toString();
         });
     }
 }

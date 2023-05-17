@@ -11,31 +11,17 @@
   --light-green: #C8E3E2;
 
   /* 3x Font colors */
-  --primary-text : #0F3D3E;
+  --primary-text : #eee;
   --secondary-text: rgb(114, 117, 150); 
   --errorText: rgb(215, 95, 112);
   --faded-grey : #a9a8b3; 
 
   /* 3x Background colors */
-  --primary-background : rgb(255, 255, 255);
+  --primary-background : linear-gradient(90deg, #2C3333 0%, #2C3333 35%, #A5C9CA 100%);
   --secondary-background: rgb(242, 240, 246);
 
-
-  /* 3x Small lengths */
-  --lengthS1: 0.25rem;
-  --lengthS2: 0.5rem;
-  --lengthS3: 0.75rem;
-  /* 3x Medium lengths */
-  --lengthM1: 1rem;
-  --lengthM2: 1.25rem;
-  --lengthM3: 1.5rem;
-  /* 3x Large lengths */
-  --lengthL1: 2rem;
-  --lengthL2: 3rem;
-  --lengthL3: 5rem;
-
-   /* 1x Extra-Large lengths */
-   --lengthX: 5.5rem;
+  --block : #E7F6F2;
+  --primary-shadow : #E1D4BB;
 
 
 
