@@ -51,18 +51,16 @@ public class QueryProcessor {
         List<Document> pagesDocuments = new ArrayList<>();
 
         Snippetly mSnippetly = new Snippetly();
-        System.out.println("HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-        System.out.println(rankedIds);
-        System.out.println(results);
+
         for (ObjectId id : rankedIds) {
             for (Webpage Webpage : results) {
                 if (!Webpage._id.equals(id)) continue;
 
                 String snippet = mSnippetly.extractWebPageSnippet(Webpage.pageData, originalQuery);
-                System.out.println("HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-                System.out.println(Webpage.title);
-                System.out.println(Webpage.url);
-                System.out.println(snippet);
+                // System.out.println("HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                // System.out.println(Webpage.title);
+                // System.out.println(Webpage.url);
+                // System.out.println(snippet);
                 Document doc = new Document()
                         .append("title", Webpage.title)
                         .append("url", Webpage.url)

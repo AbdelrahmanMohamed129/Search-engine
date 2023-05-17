@@ -73,8 +73,8 @@ public class Integration {
         }
         
         Indexer indexer = new Indexer();
-        WebCrawler crawler = new WebCrawler(URLs,500,threadsNo,indexer);
-        Indexer.startOver();
+        WebCrawler crawler = new WebCrawler(URLs,3408,threadsNo,indexer);
+        // Indexer.startOver();
         crawler.crawl();
 
         PageRanker pageRanker = new PageRanker(indexer);
