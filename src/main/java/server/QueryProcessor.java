@@ -14,6 +14,8 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.tartarus.snowball.SnowballStemmer;
 import org.tartarus.snowball.ext.englishStemmer;
@@ -39,6 +41,13 @@ public class QueryProcessor {
     private WebpageProcessor webProcessor;
     private static Ranker ranker;
 
+    private int type1 = 0;  // 0 normal phrase,  1 AND  , 2 OR
+    private int type2 = 0;  // 0 normal phrase,  1 AND  , 2 OR
+    private List<String> firstOp; 
+    private List<String> secondOp; 
+    private List<String> thirdOp; 
+    
+
 
     // ################## CONSTRUCTOR ################## //
     public QueryProcessor(Indexer indexer, String query, String pageNumber) throws Exception {
@@ -59,8 +68,8 @@ public class QueryProcessor {
         for (ObjectId id : rankedIds) {
             for (Webpage Webpage : results) {
                 if (!Webpage._id.equals(id)) continue;
-
-                String snippet = mSnippetly.extractWebPageSnippet(Webpage.pageData, utilFunctions.removeStopWordsOne(originalQuery));
+                
+                String snippet = mSnippetly.extractWebPageSnippet(Webpage.pageData, utilFunctions.removeStopWordsOne(originalQuery.toLowerCase()));
                 // System.out.println("HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                 // System.out.println(Webpage.title);
                 // System.out.println(Webpage.url);
@@ -104,6 +113,53 @@ public class QueryProcessor {
 
         // Process the query string
         isPhraseSearch = (query.startsWith("\"") && query.endsWith("\""));
+        
+        if(isPhraseSearch) {
+            // regex for pattern ""anything" (AND|OR)"anything""
+            
+            String regex = "\"(.*?)\"\\s*(AND|OR)\\s*\"(.*?)\"";
+            Pattern pattern = Pattern.compile(regex);
+            Matcher matcher = pattern.matcher(query);
+
+            String regex2 = "\"(.*?)\"\\s*(AND|OR)\\s*\"(.*?)\"\\s*(AND|OR)\\s*\"(.*?)\"";
+            Pattern pattern2 = Pattern.compile(regex2);
+            Matcher matcher2 = pattern2.matcher(query);
+
+            if(matcher2.matches()){
+                String firstAnything = matcher2.group(1);
+                String firstOperator = matcher2.group(2);
+                String secondAnything = matcher2.group(3);
+                String secondOperator = matcher2.group(4);
+                String thirdAnything = matcher2.group(5);
+
+                firstOp = Arrays.asList(firstAnything.split(" "));
+                secondOp = Arrays.asList(secondAnything.split(" "));
+                thirdOp = Arrays.asList(thirdAnything.split(" "));
+                // Process the matched values
+                if(firstOperator.equals("AND")) type1 = 1;
+                else if(firstOperator.equals("OR")) type1 = 2;
+                if(secondOperator.equals("AND")) type2 = 1;
+                else if(secondOperator.equals("OR")) type2 = 2;
+
+            }
+            else if (matcher.matches()) {
+                // Input string exactly matches the regex pattern
+                String firstAnything = matcher.group(1);
+                String operator = matcher.group(2);
+                String secondAnything = matcher.group(3);
+                
+                firstOp = Arrays.asList(firstAnything.split(" "));
+                secondOp = Arrays.asList(secondAnything.split(" "));
+                // Process the matched values
+                if(operator.equals("AND")) type1 = 1;
+                else if(operator.equals("OR")) type1 = 2;
+                
+            }
+            else{
+                type1 = 0;
+                type2 = 0;
+            }
+        }
         // query = query.substring(0, Math.min(query.length(), Constants.QUERY_MAX_LENGTH)); // CHECK
         query = utilFunctions.processString(query);
         queryWords = Arrays.asList(query.split(" "));
@@ -148,10 +204,61 @@ public class QueryProcessor {
         
         long now, startTime = System.nanoTime();
         if(paginationNo == 1) {
-            List<Webpage> matchingResults;
+            List<Webpage> matchingResults = new ArrayList<>();
 
             if (isPhraseSearch) {
-                matchingResults = mIndexer.searchPhrase(queryWords);
+                // matchingResults = mIndexer.searchPhrase(queryWords);
+                if(type1 == 0) matchingResults = mIndexer.searchPhrase(queryWords);
+                else if(type1 == 1 && type2 == 0) matchingResults = mIndexer.searchANDPhrases(firstOp, secondOp);
+                else if(type1 == 2 && type2 == 0) { 
+                    List<Webpage> matchingResults1 = mIndexer.searchPhrase(firstOp);
+                    List<Webpage> matchingResults2 = mIndexer.searchPhrase(secondOp);
+                    Set<Webpage> mergedSet = new HashSet<>(matchingResults1);
+                    mergedSet.addAll(matchingResults2);
+
+                    // Create a new list from the merged set
+                    matchingResults = new ArrayList<>(mergedSet);
+                }
+                // AND AND
+                else if (type1 == 1 && type2 == 1) {
+                    List<Webpage> matchingResults1 = mIndexer.searchANDPhrases(firstOp, secondOp);
+                    List<Webpage> matchingResults2 = mIndexer.searchPhrase(thirdOp);
+                    matchingResults = utilFunctions.intersectWebpage(matchingResults1, matchingResults2);
+                }
+                // AND OR
+                else if (type1 == 1 && type2 == 2) {
+                    List<Webpage> matchingResults1 = mIndexer.searchANDPhrases(firstOp, secondOp);
+                    List<Webpage> matchingResults2 = mIndexer.searchPhrase(thirdOp);
+                    Set<Webpage> mergedSet = new HashSet<>(matchingResults1);
+                    mergedSet.addAll(matchingResults2);
+
+                    // Create a new list from the merged set
+                    matchingResults = new ArrayList<>(mergedSet);
+                }
+                // OR AND
+                else if (type1 == 2 && type2 == 1) {
+                    List<Webpage> matchingResults1 = mIndexer.searchPhrase(firstOp);
+                    List<Webpage> matchingResults2 = mIndexer.searchPhrase(secondOp);
+                    Set<Webpage> mergedSet = new HashSet<>(matchingResults1);
+                    mergedSet.addAll(matchingResults2);
+
+                    // Create a new list from the merged set
+                    List<Webpage> matchingResults3 = new ArrayList<>(mergedSet);
+                    List<Webpage> matchingResults4 = mIndexer.searchPhrase(thirdOp);
+                    matchingResults = utilFunctions.intersectWebpage(matchingResults3, matchingResults4);
+                }
+                // OR OR
+                else if (type1 == 2 && type2 == 2) {
+                    List<Webpage> matchingResults1 = mIndexer.searchPhrase(firstOp);
+                    List<Webpage> matchingResults2 = mIndexer.searchPhrase(secondOp);
+                    List<Webpage> matchingResults3 = mIndexer.searchPhrase(thirdOp);
+                    Set<Webpage> mergedSet = new HashSet<>(matchingResults1);
+                    mergedSet.addAll(matchingResults2);
+                    mergedSet.addAll(matchingResults3);
+
+                    // Create a new list from the merged set
+                    matchingResults = new ArrayList<>(mergedSet);
+                }
             } else {
                 matchingResults = mIndexer.searchWords(queryStems);
             }
