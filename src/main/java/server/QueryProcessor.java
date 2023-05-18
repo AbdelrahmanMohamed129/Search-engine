@@ -17,6 +17,9 @@ import java.util.Set;
 
 import org.tartarus.snowball.SnowballStemmer;
 import org.tartarus.snowball.ext.englishStemmer;
+import org.tukaani.xz.rangecoder.RangeEncoder;
+
+import ch.qos.logback.classic.spi.PackagingDataCalculator;
 
 public class QueryProcessor {
 
@@ -34,6 +37,7 @@ public class QueryProcessor {
     private List<ObjectId> rankedIds;
     private List<Webpage> results;
     private WebpageProcessor webProcessor;
+    private static Ranker ranker;
 
 
     // ################## CONSTRUCTOR ################## //
@@ -56,7 +60,7 @@ public class QueryProcessor {
             for (Webpage Webpage : results) {
                 if (!Webpage._id.equals(id)) continue;
 
-                String snippet = mSnippetly.extractWebPageSnippet(Webpage.pageData, originalQuery);
+                String snippet = mSnippetly.extractWebPageSnippet(Webpage.pageData, utilFunctions.removeStopWordsOne(originalQuery));
                 // System.out.println("HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                 // System.out.println(Webpage.title);
                 // System.out.println(Webpage.url);
@@ -74,7 +78,7 @@ public class QueryProcessor {
 
         int pagesCount = ((totalResultsCount + 10 - 1) / 10);
         
-        System.out.println(pagesDocuments);
+        // System.out.println(pagesDocuments);
         Document paginationDocument = new Document()
                 .append("pages_count", pagesCount)
                 .append("current_page", paginationNo);
@@ -143,38 +147,44 @@ public class QueryProcessor {
     private void rankResults() throws Exception {
         
         long now, startTime = System.nanoTime();
+        if(paginationNo == 1) {
+            List<Webpage> matchingResults;
 
-        List<Webpage> matchingResults;
+            if (isPhraseSearch) {
+                matchingResults = mIndexer.searchPhrase(queryWords);
+            } else {
+                matchingResults = mIndexer.searchWords(queryStems);
+            }
 
-        if (isPhraseSearch) {
-            matchingResults = mIndexer.searchPhrase(queryWords);
-        } else {
-            matchingResults = mIndexer.searchWords(queryStems);
+            
+            now = System.nanoTime();
+            System.out.printf("Search time:\t %.04f sec\n", (now - startTime) / 1e9);
+            startTime = now;
+
+            //totalResultsCount = matchingResults.size();
+            totalResultsCount = Math.min(150, matchingResults.size());
+            
+
+            if (matchingResults.isEmpty()) {
+                throw new Exception("Nothing was found!! Search one more time ... NOOB =) ");
+            }
+
+            //
+            // Save search query for later suggestions
+            //
+            mIndexer.addSuggestion(query);
+
+            //
+            // Rank matching results
+            //
+            ranker = new Ranker(mIndexer, matchingResults, queryWords, queryStems);
+
+            ranker.startRanking();
         }
 
-        
-        now = System.nanoTime();
-        System.out.printf("Search time:\t %.04f sec\n", (now - startTime) / 1e9);
-        startTime = now;
-
-        totalResultsCount = matchingResults.size();
-
-        if (matchingResults.isEmpty()) {
-            throw new Exception("Nothing was found!! Search one more time ... NOOB =) ");
-        }
-
-        //
-        // Save search query for later suggestions
-        //
-        mIndexer.addSuggestion(query);
-
-        //
-        // Rank matching results
-        //
-        Ranker ranker = new Ranker(mIndexer, matchingResults, queryWords, queryStems);
-        rankedIds = ranker.startRanking(paginationNo);
-        System.out.println("Hereee 2.0 !!!!!!!!!!!!!");
-        System.out.println(rankedIds);
+        rankedIds = ranker.paginateResults(paginationNo);
+        // System.out.println("Hereee 2.0 !!!!!!!!!!!!!");
+        // System.out.println(rankedIds);
         results = mIndexer.searchIds(rankedIds, env.FIELDS_FOR_SEARCH_RESULTS);
 
         //

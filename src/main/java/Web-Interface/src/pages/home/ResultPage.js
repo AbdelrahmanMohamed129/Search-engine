@@ -10,7 +10,7 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ScrollToTop from "react-scroll-to-top";
 import ScrollToBottom from 'react-scroll-to-bottom';
-
+import { Link } from 'react-router-dom';
 const ResultPage = () => {
   const [results, setResults] = React.useState([]);
   const [numberOfPages, setNumberOfPages] = React.useState(1)
@@ -149,7 +149,9 @@ async function getSuggestion(query) {
     <div className={classes.container}>
       <ScrollToTop className={classes.up} smooth/>
         <div className={classes.head}>
-            <h1>Bingo</h1> 
+          {/* <NavLink to="/">Bingo</NavLink> */}
+            {/* <link to="/">Bingo</link>  */}
+            <Link className={classes.logo} to="/">Bingo</Link>
             <div className={classes.search}>
             <input className={classes.searchBar} list="searchlist" id="search" type="search" onKeyDown={handleClick} onChange={handleChange} value={queryy} />
             <datalist id="searchlist" className={classes.suggestion} >

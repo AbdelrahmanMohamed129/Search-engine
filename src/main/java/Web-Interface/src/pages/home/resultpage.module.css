@@ -20,11 +20,15 @@
 
 }
 
-.head h1{
+.logo{
     font-size: 3.5rem;
     background: var(--primary-background);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+.logo:hover{
+    cursor: pointer;
+    
 }
 
 .search{
