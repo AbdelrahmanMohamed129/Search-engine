@@ -202,6 +202,7 @@ public class Indexer {
         return convertToWebpages(results);
     }
 
+    
 
     public List<Webpage> searchPhrase(List<String>words) {
         if(words.isEmpty()) return new ArrayList<>(); 
@@ -345,5 +346,39 @@ public class Indexer {
         }
 
         return correctWebpages;
+    }
+
+    /* Bonus functions, returning AND of phrases */
+    public List<Webpage> searchANDPhrases(List<String>firstPhrase,List<String>secondPhrase) {
+        if(firstPhrase.isEmpty() || secondPhrase.isEmpty()) return new ArrayList<>(); 
+
+        List<Webpage> firstWebpages = searchPhrase(firstPhrase);
+        List<Webpage> secondWebpages = searchPhrase(secondPhrase);
+
+        List<Set<String>> urlSets = new ArrayList<>();
+        Set<String> tempURL = new HashSet<>();
+        for (Webpage wordDocument : firstWebpages) {
+            tempURL.add(wordDocument.url);
+        }
+        urlSets.add(tempURL);
+        tempURL.clear();
+        for (Webpage wordDocument : secondWebpages) {
+            tempURL.add(wordDocument.url);
+        }
+        urlSets.add(tempURL);
+
+        // Perform intersection to keep only the URLs that contain both phrases
+        Set<String> intersection = new HashSet<>(urlSets.get(0));
+        for (int i = 1; i < urlSets.size(); i++) {
+            intersection.retainAll(urlSets.get(i));
+        }
+
+        // Finding the documents of the urls that survived the intersection
+        List<Webpage> webpages = new ArrayList<>();
+        for(String url : intersection) {
+            webpages.add(findByURL(url));
+        }
+
+        return webpages;
     }
 }
