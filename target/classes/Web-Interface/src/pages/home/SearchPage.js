@@ -7,6 +7,7 @@ import axios from "axios";
 
 const SearchPage = () => {
   const [found, setFound] = React.useState(false)
+  const [suggested, setSuggested] = React.useState([])
   
   const navigate = useNavigate();
   const handleClick = (e) => {
@@ -15,6 +16,12 @@ const SearchPage = () => {
 
     }
   };
+
+    function handleChange() {
+    getSuggestion(document.getElementById("search").value)
+    sessionStorage.setItem("query",document.getElementById("search").value)
+    console.log(document.getElementById("search").value)
+  }
 
   async function getResults(query) {
     setFound(false)
@@ -30,7 +37,12 @@ const SearchPage = () => {
           setFound(false)
           alert(response.data)
         }
-        else{
+        else if(response.data === "400: Unable to parse URI query"){
+          setFound(false)
+          alert("Please remove special characters")
+        }
+        else
+        {
           sessionStorage.setItem("query",query)
           navigate("/result");
         }
@@ -40,12 +52,26 @@ const SearchPage = () => {
       console.error(error);
     });
   }
+
+  async function getSuggestion(query) {
+    const response = await axios.get(`http://localhost:8000/suggest?q=${query}`).then((response) => {
+      setSuggested(response.data.suggestion);
+
+    })
+   .catch(error => {
+    // Handle any errors that occurred during the request
+    console.error(error);
+  });
+}
   return (
     
     <div className={classes.container}>
     <h1 className={classes.heading}>Bingo</h1>
     <div className={classes.search}>
-      <input className={classes.searchBar} type="search" onKeyDown={handleClick}/>
+      <input className={classes.searchBar} list="searchlist" id="search" type="search" onKeyDown={handleClick} onChange={handleChange}/>
+      <datalist id="searchlist" className={classes.suggestion} >
+                  {suggested?.map((sug) => {return <option value={sug} />})}
+        </datalist>
       <i className={classes.fa}  >
             <SearchOutlinedIcon sx={{fontSize:"3.5rem"}}/>
         </i>

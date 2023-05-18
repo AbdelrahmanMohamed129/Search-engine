@@ -8,7 +8,8 @@ import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-
+import ScrollToTop from "react-scroll-to-top";
+import ScrollToBottom from 'react-scroll-to-bottom';
 
 const ResultPage = () => {
   const [results, setResults] = React.useState([]);
@@ -29,6 +30,7 @@ const ResultPage = () => {
   function handleChange() {
     setQuery(document.getElementById("search").value)
     getSuggestion(document.getElementById("search").value)
+    sessionStorage.setItem("query",document.getElementById("search").value)
     console.log(document.getElementById("search").value)
   }
 
@@ -47,6 +49,11 @@ const ResultPage = () => {
             setFound(false)
             alert(response.data)
         }
+        else if(response.data === "400: Unable to parse URI query"){
+            setFound(false)
+            alert("Please remove special characters")
+        }
+
         setResults(response.data.pages);
         // var temp = response.data.pages?.length
         setNumberOfPages(response.data.pagination.pages_count)
@@ -140,7 +147,7 @@ async function getSuggestion(query) {
   return ( 
     
     <div className={classes.container}>
-
+      <ScrollToTop className={classes.up} smooth/>
         <div className={classes.head}>
             <h1>Bingo</h1> 
             <div className={classes.search}>
@@ -154,6 +161,7 @@ async function getSuggestion(query) {
                 </i>
             </div>  
         </div>
+        <ScrollToBottom className={classes.up} smooth> 
             {!found?null:
               <div className={classes.time}>({time} seconds)</div>}
         <div className={classes.border}></div>
@@ -171,7 +179,7 @@ async function getSuggestion(query) {
             } 
             responsive={{
               0: {
-                  items: 1,
+                  items: 4,
                   itemsFit:'fill'
               },
               800: {
@@ -192,6 +200,8 @@ async function getSuggestion(query) {
           }
           
         </div>
+      </ScrollToBottom>
+
     </div>
   );
 };
