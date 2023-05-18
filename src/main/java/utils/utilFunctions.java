@@ -32,6 +32,18 @@ public class utilFunctions {
         return ret;
     }
 
+    public static String removeStopWordsOne(String words) {
+        StringBuffer ret = new StringBuffer();
+        for (String word : words.split(" ")) {
+            if (word.length() <= 2 || env.STOP_WORDS_SET.contains(word)) {
+                continue;
+            }
+            ret.append(word+" ");
+        }
+
+        return ret.toString();
+    }
+
     // It takes an array of strings and returns array of stemmed words
     public static List<String> stemWords(List<String> words) {
         List<String> ret = new ArrayList<>();
