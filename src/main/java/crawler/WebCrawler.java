@@ -1,10 +1,8 @@
 package crawler;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -58,6 +56,37 @@ public class WebCrawler {
         this.numThreads = numThreads;
         this.executor = Executors.newFixedThreadPool(numThreads);
         this.index = index;
+
+        // Add shutdown hook to save urlsToVisit to a file
+        // Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+        // try {
+        //     PrintWriter writer = new PrintWriter("links.txt");
+        //     for (String url : urlsToVisit) {
+        //         writer.println(url);
+        //     }
+        //     writer.close();
+        // } catch (FileNotFoundException e) {
+        //     System.err.println("Error saving urlsToVisit: " + e.getMessage());
+        // }
+        // }));
+
+        // try {
+        //     if (Files.exists(Paths.get("links.txt")) && Files.size(Paths.get("links.txt")) > 0) {
+        //         try (Scanner scanner = new Scanner(new File("links.txt"))) {
+        //             while (scanner.hasNextLine()) {
+        //                 String url = scanner.nextLine();
+        //                 urlsToVisit.add(url);
+        //             }
+        //         } catch (FileNotFoundException e) {
+        //             System.err.println("Error loading URLs from file: " + e.getMessage());
+        //         }
+        //     } else {
+        //         for (String seedUrl : seedUrls) {
+        //             urlsToVisit.add(seedUrl);
+        //         }
+        //     }
+        // } catch (IOException e) {
+        // }
     }
 
     public void crawl() {
@@ -91,7 +120,6 @@ public class WebCrawler {
                 } catch (URISyntaxException e) {
                     System.err.println("Error normalizing main URL: " + url);
                 }
-                final String check = url;
                         if (!visitedUrls.contains(url) && currentPageCount < maxPages) {
                             try {
                                 Document doc = Jsoup.connect(url).timeout(5000).get();
@@ -110,15 +138,13 @@ public class WebCrawler {
                                 }
 
 
-                                synchronized (lock) {
+                                synchronized (this) {
                                     if (!visitedUrls.contains(url) && currentPageCount < maxPages){
                                     // send to farah
-                                        if(index.startIndexingURL(url,doc,linksArray)){
+                                    if(index.startIndexingURL(url,doc,linksArray)){
                                             visitedUrls.add(url);
                                             currentPageCount = visitedUrls.size();
                                             System.out.println("Visited: " + url+ "     Number: " + visitedUrls.size());  
-                                            String StringUrl = url.toString();
-                                            //writeLinks(StringUrl);
                                         } 
                                     }
                                 }
@@ -213,23 +239,7 @@ public class WebCrawler {
                 return false;
             }
         }
-    
-
-    public void writeLinks(String Url) {
-		PrintWriter PrintWriter = null;
-		try {
-			FileWriter writer = new FileWriter("links.txt", true);
-			BufferedWriter bufferwriter = new BufferedWriter(writer);
-			PrintWriter = new PrintWriter(bufferwriter);
-			PrintWriter.println(Url);
-			PrintWriter.flush();
-		} catch (IOException e) {
-		} finally {
-			if (PrintWriter != null) {
-				PrintWriter.close();
-			}
-		}
-	}	
+    	
     
     public static void main(String[] args) throws IOException {
         ArrayList<String> seedUrls = new ArrayList<>();
@@ -242,7 +252,7 @@ public class WebCrawler {
                 seedUrls.add(url);
             }
             
-            scanner.close();
+            scanner.close(); 
         } catch (FileNotFoundException e) {
             System.out.println("File not found: " + e.getMessage());
         }
@@ -251,7 +261,7 @@ public class WebCrawler {
 
         Indexer newIndexer = new Indexer();
 
-       // Indexer.startOver();
+        Indexer.startOver();
 
         WebCrawler crawler = new WebCrawler(seedUrls, 6000, 100, newIndexer);
         crawler.crawl();
