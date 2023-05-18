@@ -5,10 +5,13 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.net.SocketTimeoutException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -59,35 +62,45 @@ public class WebCrawler {
         this.index = index;
 
         // Add shutdown hook to save urlsToVisit to a file
-        // Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-        // try {
-        //     PrintWriter writer = new PrintWriter("links.txt");
-        //     for (String url : urlsToVisit) {
-        //         writer.println(url);
-        //     }
-        //     writer.close();
-        // } catch (FileNotFoundException e) {
-        //     System.err.println("Error saving urlsToVisit: " + e.getMessage());
-        // }
-        // }));
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+        try {
+            PrintWriter writer = new PrintWriter("urlsToVisit.txt");
+            for (String url : urlsToVisit) {
+                writer.println(url);
+            }
+            writer.close();
+            PrintWriter writer2 = new PrintWriter("Links.txt");
+            for (String url : visitedUrls) {
+                writer2.println(url);
+            }
+            writer2.close();
+        } catch (FileNotFoundException e) {
+            System.err.println("Error saving urlsToVisit: " + e.getMessage());
+        }
+        }));
 
-        // try {
-        //     if (Files.size(Paths.get("links.txt")) > 0) {
-        //         try (Scanner scanner = new Scanner(new File("links.txt"))) {
-        //             while (scanner.hasNextLine()) {
-        //                 String url = scanner.nextLine();
-        //                 urlsToVisit.add(url);
-        //             }
-        //         } catch (FileNotFoundException e) {
-        //             System.err.println("Error loading URLs from file: " + e.getMessage());
-        //         }
-        //     } else {
-        //         for (String seedUrl : seedUrls) {
-        //             urlsToVisit.add(seedUrl);
-        //         }
-        //     }
-        // } catch (IOException e) {
-        // }
+        try {
+            if (Files.size(Paths.get("Links.txt")) > 0) {
+                try (Scanner scanner = new Scanner(new File("urlsToVisit.txt"))) {
+                    while (scanner.hasNextLine()) {
+                        String url = scanner.nextLine();
+                        urlsToVisit.add(url);
+                    }
+                    Scanner scanner2 = new Scanner(new File("Links.txt"));
+                        while (scanner2.hasNextLine()) {
+                            String url2 = scanner2.nextLine();
+                            visitedUrls.add(url2);
+                        }
+                } catch (FileNotFoundException e) {
+                    System.err.println("Error loading URLs from file: " + e.getMessage());
+                }
+            } else {
+                for (String seedUrl : seedUrls) {
+                    urlsToVisit.add(seedUrl);
+                }
+            }
+        } catch (IOException e) {
+        }
     }
 
     // Crawl function that starts crawling using threads
