@@ -14,7 +14,7 @@ import utils.env;
 
 public class Indexer {
     private MongoCollection<Document> webpagesCollection;
-    private MongoCollection<Document> wordsCollection;
+    public MongoCollection<Document> wordsCollection;
     private MongoCollection<Document> stemsCollection;
     private MongoCollection<Document> suggestCollection;
 
@@ -202,8 +202,6 @@ public class Indexer {
         return convertToWebpages(results);
     }
 
-    
-
     public List<Webpage> searchPhrase(List<String>words) {
         if(words.isEmpty()) return new ArrayList<>(); 
 
@@ -242,20 +240,26 @@ public class Indexer {
         for(Webpage webpage : webpages) {
             HashMap<String,List<Integer>> termsPositions = webpage.terms;
             boolean flag = true;
-            for(Integer pos : termsPositions.get(firstWord)) {
-                for (int i = 1; i < words.size(); i++) {
-                    if (Collections.binarySearch(termsPositions.get(words.get(i)), pos + i) < 0) {
-                        flag = false;
-                        break;
+            try {
+                for(Integer pos : termsPositions.get(firstWord)) {
+                    for (int i = 1; i < words.size(); i++) {
+                        if (Collections.binarySearch(termsPositions.get(words.get(i)), pos + i) < 0) {
+                            flag = false;
+                            break;
+                        }
                     }
                 }
+                if(flag == true) correctWebpages.add(webpage);
             }
-            if(flag == true) correctWebpages.add(webpage);
+            catch (Exception e) {
+                System.out.println(webpage.url);
+            }
         }
 
         return correctWebpages;
     }
 
+    
     /* Suggestions Functionalities */
     public List<String> getSuggestions(String query) {
         List<String> matchedQueries = new ArrayList<>();
@@ -347,7 +351,6 @@ public class Indexer {
 
         return correctWebpages;
     }
-
     /* Bonus functions, returning AND of phrases */
     public List<Webpage> searchANDPhrases(List<String>firstPhrase,List<String>secondPhrase) {
         if(firstPhrase.isEmpty() || secondPhrase.isEmpty()) return new ArrayList<>(); 
@@ -381,4 +384,69 @@ public class Indexer {
 
         return webpages;
     }
+    
+    // public List<Webpage> searchPhrase(List<String>words) {
+    //     if(words.isEmpty()) return new ArrayList<>(); 
+
+    //     Bson filter = Filters.in(env.FIELD_TERM, words);
+
+    //     // Retrieve documents of all words in the search query, from the inverted index
+    //     FindIterable<Document> wordDocuments = wordsCollection.find(filter);
+
+    //     List<Set<String>> urlSets = new ArrayList<>();
+    //     for (Document wordDocument : wordDocuments) {
+    //         List<Document> urlsList = wordDocument.getList(env.FIELD_URLS, Document.class);
+    //         Set<String> urls = new HashSet<>();
+    //         for (Document urlDocument : urlsList) {
+    //             String url = urlDocument.getString(env.FIELD_URL);
+    //             urls.add(url);
+    //         }
+    //         urlSets.add(urls);
+    //     }
+
+    //     // Perform intersection to keep only the URLs that contain all query words
+    //     Set<String> intersection = new HashSet<>(urlSets.get(0));
+    //     for (int i = 1; i < urlSets.size(); i++) {
+    //         intersection.retainAll(urlSets.get(i));
+    //     }
+
+    //     // Finding the documents of the urls that survived the intersection
+    //     List<Webpage> webpages = new ArrayList<>();
+    //     for(String url : intersection) {
+    //         webpages.add(findByURL(url));
+    //     }
+    //     List<Webpage> correctWebpages = new ArrayList<>();
+
+    //     for (Webpage page : webpages) {
+    //         try {
+    //         if (IndexerUtilities.checkPhraseOccurred(page.terms, words)) {
+    //             correctWebpages.add(page);
+    //         }
+    //     }
+    //     catch( Exception e) {
+    //         System.out.println(page.url);
+    //     }
+    //     }
+
+    //     // String firstWord = words.get(0);
+    //     // List<Webpage> correctWebpages = new ArrayList<>();
+
+    //     // // binary searching on positions, to get query correctly
+    //     // for(Webpage webpage : webpages) {
+    //     //     HashMap<String,List<Integer>> termsPositions = webpage.terms;
+    //     //     boolean flag = true;
+    //     //     for(Integer pos : termsPositions.get(firstWord)) {
+    //     //         for (int i = 1; i < words.size(); i++) {
+    //     //             if (Collections.binarySearch(termsPositions.get(words.get(i)), pos + i) < 0) {
+    //     //                 flag = false;
+    //     //                 break;
+    //     //             }
+    //     //         }
+    //     //     }
+    //     //     if(flag == true) correctWebpages.add(webpage);
+    //     // }
+
+    //     return correctWebpages;
+    // }
+
 }
