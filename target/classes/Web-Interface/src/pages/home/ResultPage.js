@@ -53,7 +53,7 @@ const ResultPage = () => {
             setFound(false)
             alert("Please remove special characters")
         }
-
+        console.log(response.data.pages)
         setResults(response.data.pages);
         // var temp = response.data.pages?.length
         setNumberOfPages(response.data.pagination.pages_count)
@@ -167,7 +167,12 @@ async function getSuggestion(query) {
             {!found?null:
               <div className={classes.time}>({time} seconds)</div>}
         <div className={classes.border}></div>
-        {results?.map(renderResults)}
+        {
+          results?.map((obj,index) => {
+            return <ResultedBlock key={index} title={obj.title} url={obj.url} snippet={obj.snippet}  />
+        }
+          )
+        }
         {/* map on buttons using index for pagination*/}
         <div className={classes.pagination}>
           {found?

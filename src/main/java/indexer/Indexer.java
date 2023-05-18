@@ -221,6 +221,7 @@ public class Indexer {
             urlSets.add(urls);
         }
 
+        if(urlSets.size() == 0) return new ArrayList<>(); 
         // Perform intersection to keep only the URLs that contain all query words
         Set<String> intersection = new HashSet<>(urlSets.get(0));
         for (int i = 1; i < urlSets.size(); i++) {
@@ -364,11 +365,12 @@ public class Indexer {
             tempURL.add(wordDocument.url);
         }
         urlSets.add(tempURL);
-        tempURL.clear();
+        Set<String> tempURL2 = new HashSet<>();
+        
         for (Webpage wordDocument : secondWebpages) {
-            tempURL.add(wordDocument.url);
+            tempURL2.add(wordDocument.url);
         }
-        urlSets.add(tempURL);
+        urlSets.add(tempURL2);
 
         // Perform intersection to keep only the URLs that contain both phrases
         Set<String> intersection = new HashSet<>(urlSets.get(0));
